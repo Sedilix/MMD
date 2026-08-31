@@ -1,6 +1,6 @@
-# CybrDeck Playground
+# Cybrdeck Playground
 
-The chat workbench from [CybrDeck](https://www.cybrdeck.com) — a streaming multi-model LLM console you can run on your own machine with your own API keys.
+The chat workbench from [Cybrdeck](https://www.cybrdeck.com) — a streaming multi-model LLM console you can run on your own machine with your own API keys.
 
 This repository contains the **frontend application only**, published source-available under the [Elastic License 2.0](LICENSE). CybrDeck's hosted backend, billing, and managed model gateway are not part of this repository and are not licensed here.
 
