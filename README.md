@@ -4,6 +4,14 @@ The chat workbench from [CybrDeck](https://www.cybrdeck.com) — a streaming mul
 
 This repository contains the **frontend application only**, published source-available under the [Elastic License 2.0](LICENSE). CybrDeck's hosted backend, billing, and managed model gateway are not part of this repository and are not licensed here.
 
+## Showcase
+
+**[sedilix.github.io/MMD](https://sedilix.github.io/MMD/)** — an interactive showcase ([`docs/`](docs/)) served straight from this repo via GitHub Pages: the liquid-glass Playground card, the live release tree (fed by this repo's own releases), and the multi-model description cards. The download buttons resolve to the newest installer assets on every release — no rebuild required.
+
+## Downloads
+
+Windows x64 installers (`.exe` NSIS setup and `.msi`) are published as assets on every tagged release — grab them from the [Releases](https://github.com/Sedilix/MMD/releases) page.
+
 ## What it is
 
 Playground is a workbench for working with language models the way an engineer works with a terminal: several models answering the same prompt side by side, live token streams, per-column telemetry (time-to-first-token, tokens/sec, cost), and a sandboxed preview pane that renders generated React/HTML/Python prototypes as you chat.

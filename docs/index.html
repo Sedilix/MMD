@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playground — Multi-Model Workbench</title>
+  <meta name="description" content="Playground is a multi-model AI workbench: fan one prompt out across frontier models, compare answers live, run BYOK or fully offline. Source-available under the Elastic License 2.0." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/playground_transparent.png" />
+</head>
+<body>
+  <!-- Delegated light source: tracks the pointer and feeds --cd-gx / --cd-gy
+       to whichever .cd-crystal block sits under the cursor. -->
+  <div class="page">
+
+    <!-- ══ Header ══════════════════════════════════════════════════ -->
+    <header class="site-header">
+      <a class="wordmark" href="https://github.com/Sedilix/MMD" target="_blank" rel="noreferrer">
+        <img src="assets/playground_transparent.png" alt="" width="26" height="26" />
+        <span>Playground</span>
+      </a>
+      <nav class="site-nav">
+        <a href="https://github.com/Sedilix/MMD" target="_blank" rel="noreferrer">Source</a>
+        <a href="https://github.com/Sedilix/MMD/releases" target="_blank" rel="noreferrer">Releases</a>
+        <a href="https://github.com/Sedilix/MMD/blob/main/LICENSE" target="_blank" rel="noreferrer">License</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <!-- ══ Section header + deflecting card + live release tree ══ -->
+      <section class="hero-row">
+        <div class="hero-copy">
+          <h1>
+            Multiple minds.<br />
+            Zero <span id="scramble-word" class="scramble" title="Click to cycle">hallucinations.</span>
+          </h1>
+          <p class="lede">
+            One prompt fans out across three frontier models simultaneously. They
+            cross-examine each other&rsquo;s reasoning, surface disagreements, and converge
+            on a verified answer.
+          </p>
+          <div class="cta-row">
+            <!-- Resolved live from the newest GitHub release; falls back to
+                 the releases page when the API is unreachable. -->
+            <a id="download-exe" class="btn-glass" href="https://github.com/Sedilix/MMD/releases/latest" target="_blank" rel="noreferrer">
+              <span>Download for 64bit</span>
+            </a>
+            <a id="download-msi" class="btn-glass" href="https://github.com/Sedilix/MMD/releases/latest" target="_blank" rel="noreferrer">
+              <span>Download .msi</span>
+            </a>
+          </div>
+          <p class="cta-note" id="release-note">Installers publish on every tagged release.</p>
+        </div>
+
+        <div class="hero-cards">
+          <!-- Interactive deflecting glass card -->
+          <a class="card-tilt-wrap" href="https://github.com/Sedilix/MMD/releases" target="_blank" rel="noreferrer">
+            <div class="cd-crystal tilt-card" id="playground-card">
+              <div class="tile-bg"><canvas id="okazz-canvas"></canvas></div>
+              <div class="tilt-content">
+                <div class="tilt-icon">
+                  <img src="assets/playground_transparent.png" alt="Playground" width="112" height="112" />
+                </div>
+                <div class="tilt-copy">
+                  <h3>Multi-Model Workbench</h3>
+                  <span class="btn-cream"><span class="btn-cream-label">Get it here</span><span class="btn-cream-arrow">&rarr;</span></span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Live release tree, fed by this repo's own GitHub releases -->
+          <div class="cd-crystal release-tree" id="release-tree">
+            <div class="rt-head">
+              <div class="rt-title">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                <span>Release Tree</span>
+              </div>
+              <span class="rt-platform">Windows x64</span>
+            </div>
+            <div class="rt-body" id="rt-body">
+              <p class="rt-loading">Reading releases&hellip;</p>
+            </div>
+            <div class="rt-foot">
+              <span class="rt-verified">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>SHA-256 Verified</span>
+              </span>
+              <span class="rt-signed">Signed Build</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ Description cards: multi-model perspectives ═══════════ -->
+      <section class="scenarios">
+        <h2 class="scenarios-heading">Three minds on one question</h2>
+        <p class="scenarios-sub">
+          Every column keeps its own model, temperature and top-P. Disagreements are surfaced,
+          not averaged away — then the deck converges on a verified synthesis.
+        </p>
+        <div class="scenario-grid" id="scenario-grid">
+          <!-- Rendered by showcase.js from the scenario data -->
+        </div>
+      </section>
+    </main>
+
+    <!-- ══ Footer ═══════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <span>Source-available under the <a href="https://github.com/Sedilix/MMD/blob/main/LICENSE" target="_blank" rel="noreferrer">Elastic License 2.0</a>.</span>
+      <span class="footer-links">
+        <a href="https://github.com/Sedilix/MMD" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/Sedilix/MMD/releases" target="_blank" rel="noreferrer">Releases</a>
+        <a href="https://github.com/Sedilix/MMD/issues" target="_blank" rel="noreferrer">Issues</a>
+      </span>
+    </footer>
+  </div>
+
+  <script src="showcase.js"></script>
+</body>
+</html>
