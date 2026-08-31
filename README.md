@@ -6,11 +6,11 @@ This repository contains the **frontend application only**, published source-ava
 
 ## Showcase
 
-**[sedilix.github.io/MMD](https://sedilix.github.io/MMD/)** — an interactive showcase ([`docs/`](docs/)) served straight from this repo via GitHub Pages: the liquid-glass Playground card, the live release tree (fed by this repo's own releases), and the multi-model description cards. The download buttons resolve to the newest installer assets on every release — no rebuild required.
+**[sedilix.github.io/MMD](https://sedilix.github.io/MMD/)** — an interactive showcase ([`docs/`](docs/)) served straight from this repo via GitHub Pages: the liquid-glass Playground card, the live release tree (fed by this repo's own releases), the multi-model description cards, and a version-history section parsed live from [CHANGELOG.md](CHANGELOG.md). The download buttons resolve to the newest installer assets on every release — no rebuild required.
 
 ## Downloads
 
-Windows x64 installers (`.exe` NSIS setup and `.msi`) are published as assets on every tagged release — grab them from the [Releases](https://github.com/Sedilix/MMD/releases) page.
+Windows x64 installers (`.exe` NSIS setup and `.msi`) are published as assets on every tagged release — grab them from the [Releases](https://github.com/Sedilix/MMD/releases) page. Every release, and what changed in it, is recorded in [CHANGELOG.md](CHANGELOG.md).
 
 ## What it is
 

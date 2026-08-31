@@ -573,6 +573,67 @@
       });
   }
 
+  /* ── Version history — parsed live from the repo's CHANGELOG.md ── */
+
+  function parseChangelog(md) {
+    var entries = [];
+    var current = null;
+    md.split(/\r?\n/).forEach(function (line) {
+      var head = line.match(/^## (v[0-9][^\s]*)\s*(?:—|-)?\s*(.*)$/);
+      if (head) {
+        current = { version: head[1], date: (head[2] || '').trim(), items: [] };
+        entries.push(current);
+        return;
+      }
+      if (current && /^- /.test(line)) {
+        current.items.push(line.slice(2).trim());
+      }
+    });
+    return entries;
+  }
+
+  function initChangelog() {
+    var feed = document.getElementById('changelog-feed');
+    if (!feed) return;
+
+    fetch('https://raw.githubusercontent.com/' + REPO + '/main/CHANGELOG.md', {
+      headers: GH_HEADERS,
+    })
+      .then(function (res) { return res.ok ? res.text() : ''; })
+      .then(function (md) {
+        var entries = md ? parseChangelog(md) : [];
+        if (!entries.length) {
+          feed.innerHTML =
+            '<p class="rt-loading">Changelog is unavailable — see the ' +
+            '<a href="https://github.com/' + REPO + '/blob/main/CHANGELOG.md" style="text-decoration:underline">file on GitHub</a>.</p>';
+          return;
+        }
+
+        feed.innerHTML = entries
+          .map(function (entry, i) {
+            var items = entry.items
+              .map(function (it) { return '<li>' + esc(it) + '</li>'; })
+              .join('');
+            return (
+              '<article class="cd-crystal changelog-entry' + (i === 0 ? ' is-latest' : '') + '">' +
+                '<div class="changelog-head">' +
+                  '<span class="changelog-version">' + esc(entry.version) + '</span>' +
+                  (entry.date ? '<span class="changelog-date">' + esc(entry.date) + '</span>' : '') +
+                  (i === 0 ? '<span class="changelog-badge">Latest</span>' : '') +
+                '</div>' +
+                '<ul class="changelog-items">' + items + '</ul>' +
+              '</article>'
+            );
+          })
+          .join('');
+      })
+      .catch(function () {
+        feed.innerHTML =
+          '<p class="rt-loading">Changelog could not be loaded — see the ' +
+          '<a href="https://github.com/' + REPO + '/blob/main/CHANGELOG.md" style="text-decoration:underline">file on GitHub</a>.</p>';
+      });
+  }
+
   /* ── Boot ──────────────────────────────────────────────────────── */
 
   initScramble();
@@ -581,4 +642,5 @@
   initLightField();
   initScenarios();
   initReleases();
+  initChangelog();
 })();

@@ -663,6 +663,88 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Footer ─────────────────────────────────────────────────────────── */
 
+.inline-link { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+.inline-link:hover { opacity: 0.8; }
+
+/* ── Version history (changelog) ───────────────────────────────────────── */
+
+.changelog { margin-top: 88px; }
+
+.changelog-feed {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.changelog-entry {
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.changelog-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.changelog-version {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.changelog-entry.is-latest .changelog-version { color: var(--cyan); }
+
+.changelog-date {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--ink-faint);
+}
+
+.changelog-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #001018;
+  background: var(--cyan);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.changelog-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.changelog-items li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+.changelog-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(103, 232, 249, 0.55);
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
