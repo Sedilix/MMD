@@ -593,8 +593,8 @@
   }
 
   function initChangelog() {
-    var feed = document.getElementById('changelog-feed');
-    if (!feed) return;
+    var tree = document.getElementById('version-tree');
+    if (!tree) return;
 
     fetch('https://raw.githubusercontent.com/' + REPO + '/main/CHANGELOG.md', {
       headers: GH_HEADERS,
@@ -603,35 +603,316 @@
       .then(function (md) {
         var entries = md ? parseChangelog(md) : [];
         if (!entries.length) {
-          feed.innerHTML =
+          tree.innerHTML =
             '<p class="rt-loading">Changelog is unavailable — see the ' +
             '<a href="https://github.com/' + REPO + '/blob/main/CHANGELOG.md" style="text-decoration:underline">file on GitHub</a>.</p>';
           return;
         }
 
-        feed.innerHTML = entries
-          .map(function (entry, i) {
-            var items = entry.items
-              .map(function (it) { return '<li>' + esc(it) + '</li>'; })
-              .join('');
-            return (
-              '<article class="cd-crystal changelog-entry' + (i === 0 ? ' is-latest' : '') + '">' +
-                '<div class="changelog-head">' +
-                  '<span class="changelog-version">' + esc(entry.version) + '</span>' +
-                  (entry.date ? '<span class="changelog-date">' + esc(entry.date) + '</span>' : '') +
-                  (i === 0 ? '<span class="changelog-badge">Latest</span>' : '') +
-                '</div>' +
-                '<ul class="changelog-items">' + items + '</ul>' +
-              '</article>'
-            );
-          })
-          .join('');
+        // GitHub-style version tree: one node per release on a spine,
+        // bullets collapse behind a tap.
+        tree.innerHTML =
+          '<div class="vt-head-row"><span class="vt-title">Release spine</span>' +
+          '<span class="vt-count-total">' + entries.length + ' versions</span></div>' +
+          '<div class="vt-spine">' +
+          entries
+            .map(function (entry, i) {
+              var items = entry.items
+                .map(function (it) { return '<li>' + esc(it) + '</li>'; })
+                .join('');
+              return (
+                '<div class="vt-entry' + (i === 0 ? ' is-open is-latest' : '') + '">' +
+                  '<button type="button" class="vt-node-head">' +
+                    '<span class="vt-dot"></span>' +
+                    '<span class="vt-version">' + esc(entry.version) + '</span>' +
+                    (i === 0 ? '<span class="changelog-badge">Latest</span>' : '') +
+                    (entry.date ? '<span class="vt-date">' + esc(entry.date) + '</span>' : '') +
+                    '<span class="vt-chev">&#9662;</span>' +
+                  '</button>' +
+                  '<ul class="vt-items">' + items + '</ul>' +
+                '</div>'
+              );
+            })
+            .join('') +
+          '</div>';
+
+        Array.prototype.forEach.call(tree.querySelectorAll('.vt-node-head'), function (head) {
+          head.addEventListener('click', function () {
+            head.parentNode.classList.toggle('is-open');
+          });
+        });
       })
       .catch(function () {
-        feed.innerHTML =
+        tree.innerHTML =
           '<p class="rt-loading">Changelog could not be loaded — see the ' +
           '<a href="https://github.com/' + REPO + '/blob/main/CHANGELOG.md" style="text-decoration:underline">file on GitHub</a>.</p>';
       });
+  }
+
+  /* ── Animated showcase — deck reveal → expand → live scene cycle ── */
+
+  var DECK_SCENES = [
+    {
+      id: 'consensus',
+      tab: 'Consensus Engine',
+      url: 'consensus.arbitration.v3',
+      badge: 'Zero-Drift Arbitration',
+      engine: 'Triple-Frontier Pipeline',
+      latency: '< 340ms Multi-Stream',
+      prompt: 'Cross-examine Claude, GPT-4.5 and Gemini on Riemann harmonic zeros and prime distribution',
+      action: 'Synthesize Consensus',
+      accent: '#22d3ee',
+      glow: 'rgba(34, 211, 238, 0.35)',
+    },
+    {
+      id: 'video',
+      tab: '4K Video Synthesis',
+      url: 'studio.video.wan-2.7',
+      badge: '4K Ultra-Consistent',
+      engine: 'Wan 2.7 Video Engine',
+      latency: '< 4.2s Fast TTFT',
+      prompt: 'Cinematic hyper-lapse tracking through an illuminated obsidian metropolis at dusk, 60fps orbit pan',
+      action: 'Synthesize 4K Video',
+      accent: '#a855f7',
+      glow: 'rgba(168, 85, 247, 0.35)',
+    },
+    {
+      id: 'image',
+      tab: 'Image Diffusion',
+      url: 'canvas.diffusion.flux-dev',
+      badge: 'Multi-Candidate Diffusion',
+      engine: 'FLUX.1 Dev & SDXL Turbo',
+      latency: '< 1.4s Instant Diffusion',
+      prompt: 'Minimalist architectural zen pavilion overlooking a misty mountain lake at sunrise, ultra-high resolution',
+      action: 'Generate 4-Candidate Batch',
+      accent: '#fbbf24',
+      glow: 'rgba(251, 191, 36, 0.35)',
+    },
+    {
+      id: 'audio',
+      tab: 'Neural Voice',
+      url: 'voice.neural.eleven-v2',
+      badge: 'Realtime Latency',
+      engine: 'ElevenLabs v2 & CosyVoice',
+      latency: '< 280ms Lossless 48kHz',
+      prompt: 'Synthesize multi-speaker neural dialogue with natural emotional inflection and binaural soundscape',
+      action: 'Generate Neural Speech',
+      accent: '#34d399',
+      glow: 'rgba(52, 211, 153, 0.35)',
+    },
+  ];
+
+  /* Per-scene result visuals — pure CSS shapes animated by class flips. */
+  function sceneVisual(scene) {
+    var i, rows;
+    if (scene.id === 'consensus') {
+      rows = '';
+      for (i = 0; i < 3; i++) {
+        rows +=
+          '<div class="cv-col">' +
+            '<span class="cv-model">' + ['Claude', 'GPT-4.5', 'Gemini'][i] + '</span>' +
+            '<span class="cv-line" style="--d:' + (i * 160) + 'ms"></span>' +
+            '<span class="cv-line short" style="--d:' + (i * 160 + 180) + 'ms"></span>' +
+            '<span class="cv-line" style="--d:' + (i * 160 + 360) + 'ms"></span>' +
+            '<span class="cv-line short" style="--d:' + (i * 160 + 520) + 'ms"></span>' +
+          '</div>';
+      }
+      return '<div class="cv-consensus">' + rows + '<div class="cv-merge"><span>verified synthesis</span></div></div>';
+    }
+    if (scene.id === 'video') {
+      rows = '';
+      for (i = 0; i < 7; i++) {
+        rows += '<div class="cv-frame" style="--d:' + (i * 110) + 'ms"><span class="cv-frame-glow"></span></div>';
+      }
+      return '<div class="cv-film">' + rows + '<div class="cv-playhead"></div></div>';
+    }
+    if (scene.id === 'image') {
+      rows = '';
+      for (i = 0; i < 4; i++) {
+        rows +=
+          '<div class="cv-tile" style="--d:' + (i * 150) + 'ms">' +
+            '<span class="cv-tile-label">cand ' + (i + 1) + '</span>' +
+          '</div>';
+      }
+      return '<div class="cv-grid">' + rows + '</div>';
+    }
+    rows = '';
+    for (i = 0; i < 22; i++) {
+      var h = 18 + Math.round(Math.abs(Math.sin(i * 1.7)) * 62);
+      rows += '<span class="cv-bar" style="height:' + h + '%;--d:' + (i * 45) + 'ms"></span>';
+    }
+    return '<div class="cv-wave">' + rows + '</div>';
+  }
+
+  function deckFaceMarkup() {
+    return DECK_SCENES
+      .map(function (s) {
+        return (
+          '<div class="deck-face" style="--accent:' + s.accent + ';--glow:' + s.glow + '">' +
+            '<span class="deck-face-engine">' + s.engine + '</span>' +
+            '<span class="deck-face-badge">' + s.badge + '</span>' +
+            '<span class="deck-face-lines"><i></i><i></i><i></i></span>' +
+          '</div>'
+        );
+      })
+      .join('');
+  }
+
+  function panelMarkup() {
+    return (
+      '<div class="sc-panel">' +
+        '<div class="sc-chrome">' +
+          '<span class="sc-dots"><i></i><i></i><i></i></span>' +
+          '<span class="sc-url" id="sc-url"></span>' +
+          '<span class="sc-badge" id="sc-badge"></span>' +
+        '</div>' +
+        '<div class="sc-tabs" id="sc-tabs">' +
+          DECK_SCENES.map(function (s, i) {
+            return '<button type="button" class="sc-tab' + (i === 0 ? ' is-active' : '') + '" data-idx="' + i + '">' + s.tab + '</button>';
+          }).join('') +
+        '</div>' +
+        '<div class="sc-prompt-row">' +
+          '<span class="sc-caret">&gt;</span>' +
+          '<span class="sc-prompt" id="sc-prompt"></span>' +
+          '<button type="button" class="sc-action" id="sc-action"></button>' +
+        '</div>' +
+        '<div class="sc-body" id="sc-body"></div>' +
+        '<div class="sc-foot">' +
+          '<span id="sc-engine"></span>' +
+          '<span class="sc-latency" id="sc-latency"></span>' +
+          '<span class="sc-status" id="sc-status"></span>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function initDeckShowcase() {
+    var stage = document.getElementById('showcase-stage');
+    if (!stage) return;
+
+    var timers = [];
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function clearAll() { timers.forEach(clearTimeout); timers = []; }
+
+    /* Reduced motion: land straight on the first scene's result. */
+    if (REDUCED) {
+      stage.classList.add('is-expanded');
+      stage.innerHTML = panelMarkup();
+      var rs = DECK_SCENES[0];
+      document.getElementById('sc-url').textContent = 'playground.app/' + rs.url;
+      document.getElementById('sc-badge').textContent = rs.badge;
+      document.getElementById('sc-prompt').textContent = rs.prompt;
+      document.getElementById('sc-action').textContent = rs.action;
+      document.getElementById('sc-engine').textContent = rs.engine;
+      document.getElementById('sc-latency').textContent = rs.latency;
+      document.getElementById('sc-status').textContent = 'Verified';
+      var rb = document.getElementById('sc-body');
+      rb.innerHTML = sceneVisual(rs);
+      rb.classList.add('is-done');
+      return;
+    }
+
+    /* Beat A — deck: a small tilted card riffles through engine faces. */
+    var RIFFLE_MS = [217, 117, 133, 83, 217, 100, 183, 217, 233, 133, 150, 200];
+    stage.innerHTML =
+      '<div class="deck-stack" aria-hidden="true"><div></div><div></div></div>' +
+      '<div class="deck-card" id="deck-card">' + deckFaceMarkup() + '</div>';
+    var deck = document.getElementById('deck-card');
+    var faces = deck.querySelectorAll('.deck-face');
+    var faceIdx = 0;
+    var riffleTimer = null;
+
+    function showFace(i) {
+      Array.prototype.forEach.call(faces, function (f, k) {
+        f.classList.toggle('is-up', k === i);
+      });
+    }
+    function riffle() {
+      faceIdx = (faceIdx + 1) % faces.length;
+      showFace(faceIdx);
+      deck.classList.remove('wobble');
+      void deck.offsetWidth; // restart the wobble animation
+      deck.classList.add('wobble');
+      riffleTimer = setTimeout(riffle, RIFFLE_MS[faceIdx % RIFFLE_MS.length]);
+    }
+    showFace(0);
+    riffle();
+
+    /* Beat B — expand into the panel, then Beat C — live scene cycle. */
+    later(function () {
+      clearTimeout(riffleTimer);
+      stage.querySelector('.deck-stack').classList.add('gone');
+      deck.classList.add('expanded');
+      later(function () {
+        stage.classList.add('is-expanded');
+        stage.innerHTML = panelMarkup();
+        startCycle();
+      }, 760);
+    }, 2450);
+
+    var idx = 0;
+    function startCycle() {
+      var tabs = document.querySelectorAll('#sc-tabs .sc-tab');
+      Array.prototype.forEach.call(tabs, function (tab) {
+        tab.addEventListener('click', function () {
+          clearAll();
+          playScene(parseInt(tab.getAttribute('data-idx'), 10));
+        });
+      });
+      playScene(0);
+    }
+
+    function playScene(i) {
+      idx = i;
+      var scene = DECK_SCENES[i];
+      Array.prototype.forEach.call(document.querySelectorAll('#sc-tabs .sc-tab'), function (t, k) {
+        t.classList.toggle('is-active', k === i);
+      });
+      var panel = stage.querySelector('.sc-panel');
+      panel.style.setProperty('--accent', scene.accent);
+      panel.style.setProperty('--glow', scene.glow);
+
+      document.getElementById('sc-url').textContent = 'playground.app/' + scene.url;
+      document.getElementById('sc-badge').textContent = scene.badge;
+      document.getElementById('sc-action').textContent = scene.action;
+      document.getElementById('sc-engine').textContent = scene.engine;
+      document.getElementById('sc-latency').textContent = scene.latency;
+      var status = document.getElementById('sc-status');
+      status.textContent = '';
+      var promptEl = document.getElementById('sc-prompt');
+      var body = document.getElementById('sc-body');
+      body.className = 'sc-body';
+      body.innerHTML = '';
+
+      /* Phase 1 — typing the prompt. */
+      var chars = 0;
+      (function type() {
+        chars += 2;
+        promptEl.textContent = scene.prompt.slice(0, chars);
+        if (chars < scene.prompt.length) {
+          later(type, 16);
+          return;
+        }
+        /* Phase 2 — the action button lands, then rendering. */
+        var action = document.getElementById('sc-action');
+        later(function () {
+          action.classList.add('is-clicked');
+          later(function () { action.classList.remove('is-clicked'); }, 260);
+          later(function () {
+            body.innerHTML = sceneVisual(scene);
+            body.classList.add('is-rendering');
+            status.textContent = 'rendering\u2026';
+            /* Phase 3 — result lands, hold, then advance. */
+            later(function () {
+              body.classList.remove('is-rendering');
+              body.classList.add('is-done');
+              status.textContent = '\u2713 verified';
+              later(function () { playScene((idx + 1) % DECK_SCENES.length); }, 5200);
+            }, 1500);
+          }, 300);
+        }, 420);
+      })();
+    }
   }
 
   /* ── Boot ──────────────────────────────────────────────────────── */
@@ -643,4 +924,5 @@
   initScenarios();
   initReleases();
   initChangelog();
+  initDeckShowcase();
 })();
