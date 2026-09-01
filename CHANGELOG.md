@@ -9,6 +9,14 @@ workflow and published as that release's notes. Keep entries as plain
 markdown bullets; an optional `— date` suffix on the heading is ignored
 by the extractor and rendered as the release date.
 
+## v0.2.1 — 1 Sep 2026
+
+- War-room workbench monolith (2,615 lines) split into 11 focused modules, unlocking the agent-tool roadmap
+- Skill-gated gateway web search: enabling the Stripe Billing or GCP Dataflow skill arms the gateway search loop, with a live tool-activity strip showing real search spend and cited sources — never fabricated
+- Workbench behaves like a native app surface: page scroll locked to the viewport and the desktop titlebar offset absorbed
+- Column layouts rebuilt: two and three models sit side by side, four models fill a 2×2 quadrant, every window stretches to full pane height
+- Tool directive cards report capture state instead of inventing execution output
+
 ## v0.2.0 — 31 Aug 2026
 
 - Releases now publish to the public Sedilix/MMD repository — installers, signatures and the updater manifest ship as GitHub release assets anyone can download without auth
