@@ -9,6 +9,17 @@ workflow and published as that release's notes. Keep entries as plain
 markdown bullets; an optional `— date` suffix on the heading is ignored
 by the extractor and rendered as the release date.
 
+## v0.2.2 — 8 Sep 2026
+
+- Music studio route rewritten against the real DashScope Fun-Music API contract — request body now matches the official { model, input: { prompt, lyrics, gender } } spec exactly, with no invented parameters
+- Replaced the fabricated wanx-music-v1 model with the documented fun-music-preview tier (15 credits, shorter compositions) alongside fun-music-v1 (20 credits, full vocal + instrumental)
+- Procedural WAV placeholder fallback removed entirely — no more sine-wave beeps billed as real tracks; the route either generates from DashScope or returns a clear error
+- Per-model validation: fun-music-preview requires a prompt; fun-music-v1 requires at least one of prompt or lyrics; lyrics override the prompt when both are provided (documented behaviour)
+- Audio Studio UI rebuilt around the real API surface: lyrics textarea with live character counter and section-tag hints ([verse], [chorus], [bridge]), vocal gender toggle (female/male) that auto-disables for the preview tier, format selector locked to MP3/WAV
+- 35-check static assertion suite (check-audio-studio.ts) gates the Fun-Music contract: body shape, field placement, per-model validation, honesty checks — no invented field can leak back in
+- Download URL TTL stamped server-side at 24 hours per DashScope docs; audio URL parsed from the documented output.audio.url response path
+
+
 ## v0.2.1 — 1 Sep 2026
 
 - War-room workbench monolith (2,615 lines) split into 11 focused modules, unlocking the agent-tool roadmap
