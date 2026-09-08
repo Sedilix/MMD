@@ -254,6 +254,14 @@ export function TowerCanvas({
     };
   }, [quality, focusX]);
 
+  // The host is always `relative`, and callers must not try to position it: the
+  // crown overlay below is placed in this element's coordinate space, and
+  // `build` sizes the canvas off this element's box. A `position` passed in
+  // `className` cannot win anyway — Tailwind emits `.relative` after
+  // `.absolute`, so this class takes the cascade and the caller's `inset-0`
+  // silently does nothing, leaving the host auto-height and the canvas
+  // measuring a box it is itself the content of. Size this with `h-full w-full`
+  // and position the wrapper instead.
   return (
     <div ref={hostRef} className={`${className} relative will-change-transform`} aria-hidden="true">
       <canvas

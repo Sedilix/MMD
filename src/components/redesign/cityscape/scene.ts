@@ -1152,7 +1152,7 @@ const PULSE_DECAY_TAU = 0.26;
 const PULSE_EPSILON = 0.004;
 
 /** Share of city windows that ever blink unprompted. */
-const IDLE_SHARE = 0.075;
+const IDLE_SHARE = 0.12;
 /** Seconds between one idle window's turns, and how long a turn lasts. */
 const IDLE_PERIOD = 34;
 const IDLE_ON = 3.1;

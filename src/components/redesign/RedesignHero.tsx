@@ -351,7 +351,10 @@ export function RedesignHero() {
         )}
       >
         <TowerCanvas
-          className="absolute inset-0"
+          // Sized, not positioned — this wrapper is what carries the position.
+          // See the note on TowerCanvas's own root for why passing `absolute`
+          // here left the scene short of the section and cut the podium off.
+          className="h-full w-full"
           quality={isDesktop ? 'high' : 'low'}
           focusX={isDesktop ? 0.76 : 0.5}
           highlight={active?.band ?? null}
