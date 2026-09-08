@@ -1,0 +1,2063 @@
+[
+  {
+    "id": "one-slm-v1",
+    "displayName": "Persona One Sovereign SLM 1.5B (In-House Cloud)",
+    "provider": "cybrdeck",
+    "apiVersionId": "one-slm-v1",
+    "maxTokens": 2048,
+    "brand": "Persona One",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Cybrdeck's custom 1.5B Small Language Model fine-tuned on Persona One's curiosity memories & system context.",
+    "inputMultiplier": 0.2,
+    "outputMultiplier": 0.5,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-3-7-flash",
+    "displayName": "Gemini 3.7 Flash",
+    "provider": "google",
+    "apiVersionId": "gemini-3.7-flash",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Google's flagship hybrid reasoning model. Combines sub-second response speeds with dynamic thinking budgets and 1M context.",
+    "inputMultiplier": 0.75,
+    "outputMultiplier": 3.0,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": true,
+      "video": true,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-3-5-pro",
+    "displayName": "Gemini 3.5 Pro",
+    "provider": "google",
+    "apiVersionId": "gemini-3.5-flash",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Google's long-context agentic & coding engine. Balanced latency with a 1M-token window.",
+    "inputMultiplier": 1.5,
+    "outputMultiplier": 9,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-3-1-pro",
+    "displayName": "Gemini 3.1 Pro (Preview)",
+    "provider": "google",
+    "apiVersionId": "gemini-3.1-pro-preview",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Google's premier deep-reasoning model for complex system simulation tasks with a 1M context window.",
+    "inputMultiplier": 2,
+    "outputMultiplier": 12,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-3-flash",
+    "displayName": "Gemini 3 Flash (Preview)",
+    "provider": "google",
+    "apiVersionId": "gemini-3-flash-preview",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Google's cheap, fast general-purpose model. Ideal for high-volume lightweight tasks where cost dominates reasoning depth.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 3,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-2-5-flash-lite",
+    "displayName": "Gemini 2.5 Flash Lite",
+    "provider": "google",
+    "apiVersionId": "gemini-2.5-flash-lite",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "The cheapest Gemini tier. Ultra-low-cost completions for trivial tasks and bulk processing.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-2-5-pro",
+    "displayName": "Gemini 2.5 Pro",
+    "provider": "google",
+    "apiVersionId": "gemini-2.5-pro",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Google's established Pro tier — deep reasoning with a 1M-token context window.",
+    "inputMultiplier": 1.25,
+    "outputMultiplier": 10,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemma-4-26b",
+    "displayName": "Gemma 4 26B A4B IT",
+    "provider": "novita",
+    "apiVersionId": "google/gemma-4-26b-a4b-it",
+    "maxTokens": 262144,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Google's open-weights Gemma 4 with 26B parameters. Balanced open-model completions at a low burn rate.",
+    "inputMultiplier": 0.13,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-7-max",
+    "displayName": "Qwen 3.7 Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3.7-max",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Alibaba's flagship. Elite performance for multi-step agentic workflows, mathematics, and Chinese/English code generation.",
+    "inputMultiplier": 2.0,
+    "outputMultiplier": 8.0,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-8-max",
+    "displayName": "Qwen 3.8 Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3.8-max",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Alibaba's newest flagship. Multimodal hybrid-thinking model with 1M context, native image understanding, and controllable reasoning depth via enable_thinking.",
+    "inputMultiplier": 2.5,
+    "outputMultiplier": 10.0,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-plus",
+    "displayName": "Qwen 3 Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3.6-plus",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Excellent balance of speed and multi-lingual instruction-following. A sensible default for production workloads.",
+    "inputMultiplier": 0.8,
+    "outputMultiplier": 4.2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-5-9b",
+    "displayName": "Qwen 3.5 9B",
+    "provider": "togetherai",
+    "apiVersionId": "qwen3.5-9b",
+    "maxTokens": 262144,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Compact open-weights Qwen. Fast, cheap, and capable enough for everyday completions — a solid Free-tier workhorse.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-turbo",
+    "displayName": "Qwen Turbo",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-turbo",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Alibaba's cheapest Qwen tier. Massive context window at a rock-bottom burn rate.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-max",
+    "displayName": "Qwen Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-max",
+    "maxTokens": 131072,
+    "brand": "Alibaba",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Alibaba's top-tier Qwen Max. Highest-quality reasoning and instruction following in the Qwen family.",
+    "inputMultiplier": 2.0,
+    "outputMultiplier": 8.0,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-5",
+    "displayName": "GPT-5.5 Flagship",
+    "provider": "openai",
+    "apiVersionId": "gpt-5.5",
+    "maxTokens": 1100000,
+    "brand": "OpenAI",
+    "tier": "premium",
+    "access": "registered",
+    "description": "OpenAI's premier general agentic model. Uncompromising reasoning. Supports the full reasoningEffort ladder (none/light/standard/xhigh).",
+    "inputMultiplier": 5,
+    "outputMultiplier": 30,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-4",
+    "displayName": "GPT-5.4 Workhorse",
+    "provider": "openai",
+    "apiVersionId": "gpt-5.4",
+    "maxTokens": 1100000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Highly accurate, fast, and cost-efficient OpenAI model for everyday production workloads.",
+    "inputMultiplier": 2.38,
+    "outputMultiplier": 14.25,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-4-azure",
+    "displayName": "GPT-5.4 Workhorse (Azure)",
+    "provider": "azure",
+    "apiVersionId": "gpt-5.4",
+    "maxTokens": 1100000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "GPT-5.4 routed through Microsoft Azure. Use as a fallback when the OpenAI path is degraded.",
+    "inputMultiplier": 2.5,
+    "outputMultiplier": 15,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-4-mini",
+    "displayName": "GPT-5.4 Mini",
+    "provider": "openai",
+    "apiVersionId": "gpt-5.4-mini",
+    "maxTokens": 400000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "The smaller GPT-5.4 variant. Most of the flagship's quality at a fraction of the burn.",
+    "inputMultiplier": 0.71,
+    "outputMultiplier": 4.27,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-nano",
+    "displayName": "GPT-5 Nano",
+    "provider": "openai",
+    "apiVersionId": "gpt-5-nano",
+    "maxTokens": 400000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "guest",
+    "description": "OpenAI's tiniest GPT-5 tier. Nearly free; perfect for trivial completions and a great Free-tier demo.",
+    "inputMultiplier": 0.05,
+    "outputMultiplier": 0.38,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-mini",
+    "displayName": "GPT-5 Mini",
+    "provider": "openai",
+    "apiVersionId": "gpt-5-mini",
+    "maxTokens": 400000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "OpenAI's small-but-capable GPT-5. Reasoning depth at a moderate burn rate.",
+    "inputMultiplier": 0.25,
+    "outputMultiplier": 2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-4o",
+    "displayName": "GPT-4o",
+    "provider": "openai",
+    "apiVersionId": "gpt-4o",
+    "maxTokens": 128000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "OpenAI's established multimodal GPT-4o. Solid all-rounder with image input.",
+    "inputMultiplier": 2.5,
+    "outputMultiplier": 10,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-4o-mini",
+    "displayName": "GPT-4o Mini",
+    "provider": "openai",
+    "apiVersionId": "gpt-4o-mini",
+    "maxTokens": 128000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "guest",
+    "description": "The mini GPT-4o. Cheap and cheerful — a good Free-tier entry into OpenAI's multimodal family.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-oss-120b",
+    "displayName": "GPT OSS 120B",
+    "provider": "togetherai",
+    "apiVersionId": "openai/gpt-oss-120b",
+    "maxTokens": 131072,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "guest",
+    "description": "OpenAI's open-weights GPT OSS at 120B. Open model completions at a very low burn rate.",
+    "inputMultiplier": 0.14,
+    "outputMultiplier": 0.57,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-sonnet-5",
+    "displayName": "Claude Sonnet 5",
+    "provider": "anthropic",
+    "apiVersionId": "claude-sonnet-5",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's coding and tooling workhorse. Strong agentic automation, debugging, and tool use.",
+    "inputMultiplier": 1.9,
+    "outputMultiplier": 9.5,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-sonnet-5-bedrock",
+    "displayName": "Claude Sonnet 5 (AWS Bedrock)",
+    "provider": "aws-bedrock",
+    "apiVersionId": "aws-bedrock/claude-sonnet-5",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Claude Sonnet 5 routed through AWS Bedrock. Use as a fallback when the Anthropic path is degraded.",
+    "inputMultiplier": 1.9,
+    "outputMultiplier": 9.5,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-opus-4-8",
+    "displayName": "Claude Opus 4.8",
+    "provider": "anthropic",
+    "apiVersionId": "claude-opus-4-8",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's frontier Opus tier. The deepest reasoning and longest-horizon autonomy in the Claude family.",
+    "inputMultiplier": 5,
+    "outputMultiplier": 25,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-haiku-4-5",
+    "displayName": "Claude Haiku 4.5",
+    "provider": "anthropic",
+    "apiVersionId": "claude-haiku-4-5",
+    "maxTokens": 200000,
+    "brand": "Anthropic",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Anthropic's fast, cheap Haiku tier. Most of Claude's quality at a fraction of the burn.",
+    "inputMultiplier": 1,
+    "outputMultiplier": 5,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-fable-5",
+    "displayName": "Claude Fable 5",
+    "provider": "anthropic",
+    "apiVersionId": "claude-fable-5",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's logic flagship. Unmatched long-horizon autonomy on tasks that span millions of tokens of context.",
+    "inputMultiplier": 10,
+    "outputMultiplier": 50,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "llama-4-scout-109b",
+    "displayName": "Llama 4 Scout 109B",
+    "provider": "aws-bedrock",
+    "apiVersionId": "llama-4-scout-17b-instruct",
+    "maxTokens": 131072,
+    "brand": "Meta",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Meta's long-context Llama 4 Scout at the 109B parameter scale. Open-weight friendly classification at standard-tier burn.",
+    "inputMultiplier": 0.18,
+    "outputMultiplier": 0.59,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "llama-4-maverick-17b",
+    "displayName": "Llama 4 Maverick 17B",
+    "provider": "aws-bedrock",
+    "apiVersionId": "llama-4-maverick-17b-instruct",
+    "maxTokens": 1048576,
+    "brand": "Meta",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Meta's Llama 4 Maverick. 1M-token context window with solid open-weight reasoning.",
+    "inputMultiplier": 0.27,
+    "outputMultiplier": 0.85,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "llama-3-3-70b",
+    "displayName": "Llama 3.3 70B Instruct",
+    "provider": "nebius",
+    "apiVersionId": "llama-3.3-70b-instruct",
+    "maxTokens": 131072,
+    "brand": "Meta",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Meta's Llama 3.3 70B. Open-weight instruction-tuned completions at a low burn rate.",
+    "inputMultiplier": 0.14,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "mistral-large-3",
+    "displayName": "Mistral Large 3",
+    "provider": "mistral",
+    "apiVersionId": "mistral-large-latest",
+    "maxTokens": 262144,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Heavyweight open-weight MoE with solid multi-lingual features and strong code/instruction following.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 1.5,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "mistral-small-3-2",
+    "displayName": "Mistral Small 3.2",
+    "provider": "mistral",
+    "apiVersionId": "mistral-small-2506",
+    "maxTokens": 128000,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Mistral's small variant. Cheap, fast, and capable for everyday completions.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.3,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "ministral-3b",
+    "displayName": "Ministral 3B",
+    "provider": "mistral",
+    "apiVersionId": "ministral-3b-2512",
+    "maxTokens": 131072,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Mistral's tiniest model. Edge-class completions at a near-zero burn rate — a great Free-tier floor.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.1,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "devstral-2",
+    "displayName": "Devstral 2",
+    "provider": "mistral",
+    "apiVersionId": "devstral-2512",
+    "maxTokens": 262144,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Mistral's coding specialist. Strong code generation and agentic development workflows.",
+    "inputMultiplier": 0.4,
+    "outputMultiplier": 2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-2",
+    "displayName": "GLM 5.2 (Reasoning)",
+    "provider": "zai",
+    "apiVersionId": "zai-glm-5.2",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Z.ai / Zhipu's elite 1M-context reasoning model. Streams `reasoning_content` deltas for the thinking accordion. Massive coding depth at an extremely competitive burn rate.",
+    "inputMultiplier": 1.4,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-2-canopywave",
+    "displayName": "GLM 5.2 (Canopywave)",
+    "provider": "canopywave",
+    "apiVersionId": "zai/GLM-5.2",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "GLM 5.2 routed through Canopywave. Same reasoning model, secondary path.",
+    "inputMultiplier": 1.4,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-2-nebius",
+    "displayName": "GLM 5.2 (Nebius)",
+    "provider": "nebius",
+    "apiVersionId": "zai-glm-5.2",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "GLM 5.2 routed through Nebius. Same reasoning model, tertiary path.",
+    "inputMultiplier": 1.4,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-2-cloudflare",
+    "displayName": "GLM 5.2 (Cloudflare)",
+    "provider": "cloudflare",
+    "apiVersionId": "zai-glm-5.2",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "GLM 5.2 routed through Cloudflare Workers AI. Cheapest path; reasoning deltas may differ.",
+    "inputMultiplier": 0.93,
+    "outputMultiplier": 3,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-mini",
+    "displayName": "GLM 5 Mini",
+    "provider": "zai",
+    "apiVersionId": "zai/glm-5-turbo",
+    "maxTokens": 200000,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Lower-cost Zhipu variant. Same Z.ai API surface as GLM 5.2 but tuned for high-throughput lightweight completions.",
+    "inputMultiplier": 1.2,
+    "outputMultiplier": 4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-4-5",
+    "displayName": "GLM 4.5",
+    "provider": "embercloud",
+    "apiVersionId": "embercloud/glm-4.5",
+    "maxTokens": 128000,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Zhipu's established GLM 4.5. Solid general-purpose reasoning and coding.",
+    "inputMultiplier": 0.6,
+    "outputMultiplier": 2.2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "kimi-k2-6",
+    "displayName": "Kimi K2.6 (Moonshot)",
+    "provider": "moonshot",
+    "apiVersionId": "moonshot/kimi-k2.6",
+    "maxTokens": 262144,
+    "brand": "Moonshot",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Moonshot Kimi K2.6 reasoning-capable, long-context model. Emits thinking deltas; routed through our OpenAI-compatible Z.ai gateway in this build.",
+    "inputMultiplier": 0.66,
+    "outputMultiplier": 3.41,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "kimi-k3",
+    "displayName": "Kimi K3",
+    "provider": "moonshot",
+    "apiVersionId": "kimi-k3",
+    "maxTokens": 1048576,
+    "brand": "Moonshot",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Moonshot's frontier Kimi K3. Top-tier reasoning with a 1M-token context window.",
+    "inputMultiplier": 3,
+    "outputMultiplier": 15,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v3-2",
+    "displayName": "DeepSeek V3.2",
+    "provider": "deepseek",
+    "apiVersionId": "deepseek-v3.2",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "standard",
+    "access": "registered",
+    "description": "DeepSeek's V3.2. Strong open-weight reasoning at a competitive burn rate.",
+    "inputMultiplier": 0.25,
+    "outputMultiplier": 0.5,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "grok-4-3",
+    "displayName": "Grok 4.3",
+    "provider": "xai",
+    "apiVersionId": "grok-4.3",
+    "maxTokens": 1048576,
+    "brand": "xAI",
+    "tier": "premium",
+    "access": "registered",
+    "description": "xAI's Grok 4.3. Long-context reasoning with a distinctive conversational style.",
+    "inputMultiplier": 1.19,
+    "outputMultiplier": 2.38,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "minimax-m3",
+    "displayName": "MiniMax M3",
+    "provider": "minimax",
+    "apiVersionId": "minimax-m3",
+    "maxTokens": 1048576,
+    "brand": "MiniMax",
+    "tier": "standard",
+    "access": "registered",
+    "description": "MiniMax's M3. 1M-token context with solid multilingual and agentic capabilities.",
+    "inputMultiplier": 0.6,
+    "outputMultiplier": 2.4,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemma-4-local",
+    "displayName": "Gemma 4 (Local / Ollama)",
+    "provider": "local",
+    "apiVersionId": "gemma4:12b",
+    "maxTokens": 131072,
+    "brand": "Google",
+    "tier": "local",
+    "access": "guest",
+    "description": "Google's open-weights powerhouse running locally on cybrdeck via Ollama. Free at the credit layer; restricted from heavy multimodal inputs.",
+    "inputMultiplier": 0,
+    "outputMultiplier": 0,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    },
+    "provisioning": { "pro": false, "dev": false, "free": false }
+  },
+  {
+    "id": "o1",
+    "displayName": "OpenAI o1",
+    "provider": "openai",
+    "apiVersionId": "o1",
+    "maxTokens": 200000,
+    "brand": "OpenAI",
+    "tier": "premium",
+    "access": "registered",
+    "description": "OpenAI's reasoning flagship model. Designed to spend more time thinking before responding.",
+    "inputMultiplier": 15,
+    "outputMultiplier": 60,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "o3-mini",
+    "displayName": "OpenAI o3-mini",
+    "provider": "openai",
+    "apiVersionId": "o3-mini",
+    "maxTokens": 200000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "OpenAI's fast reasoning model, optimized for coding and math.",
+    "inputMultiplier": 1.1,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v4-pro",
+    "displayName": "DeepSeek V4 Pro",
+    "provider": "deepseek",
+    "apiVersionId": "deepseek-v4-pro",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "premium",
+    "access": "registered",
+    "description": "DeepSeek's flagship model with advanced reasoning and multi-lingual capabilities.",
+    "inputMultiplier": 0.435,
+    "outputMultiplier": 0.87,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v4-flash",
+    "displayName": "DeepSeek V4 Flash",
+    "provider": "deepseek",
+    "apiVersionId": "deepseek-v4-flash",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Ultra-fast, cost-efficient model in the DeepSeek V4 family.",
+    "inputMultiplier": 0.14,
+    "outputMultiplier": 0.28,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-7-plus",
+    "displayName": "Qwen 3.7 Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3.7-plus",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's advanced standard model with solid reasoning and general capabilities.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 3,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-sonnet-4-5",
+    "displayName": "Claude Sonnet 4.5",
+    "provider": "anthropic",
+    "apiVersionId": "claude-sonnet-4-5",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's established premium model with exceptional tool use and coding skills.",
+    "inputMultiplier": 3,
+    "outputMultiplier": 15,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-opus-4-6",
+    "displayName": "Claude Opus 4.6",
+    "provider": "anthropic",
+    "apiVersionId": "claude-opus-4-6",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's Opus 4.6 — extended long-horizon autonomy and deep reasoning.",
+    "inputMultiplier": 5,
+    "outputMultiplier": 25,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-opus-4-7",
+    "displayName": "Claude Opus 4.7",
+    "provider": "anthropic",
+    "apiVersionId": "claude-opus-4-7",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's latest Opus 4.7 — frontier reasoning and agentic depth.",
+    "inputMultiplier": 5,
+    "outputMultiplier": 25,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "claude-sonnet-4-6",
+    "displayName": "Claude Sonnet 4.6",
+    "provider": "anthropic",
+    "apiVersionId": "claude-sonnet-4-6",
+    "maxTokens": 1000000,
+    "brand": "Anthropic",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Anthropic's Sonnet 4.6 — fast, balanced coding and tool use.",
+    "inputMultiplier": 3,
+    "outputMultiplier": 15,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "codestral-2508",
+    "displayName": "Codestral 2508",
+    "provider": "mistral",
+    "apiVersionId": "codestral-2508",
+    "maxTokens": 262144,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Mistral's latest code-specialized model — strong fill-in-the-middle and agentic coding.",
+    "inputMultiplier": 0.3,
+    "outputMultiplier": 0.9,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "ministral-8b",
+    "displayName": "Ministral 8B",
+    "provider": "mistral",
+    "apiVersionId": "ministral-8b-2512",
+    "maxTokens": 131072,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Mistral's balanced edge model — faster than 3B with improved reasoning.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.1,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "ministral-14b",
+    "displayName": "Ministral 14B",
+    "provider": "mistral",
+    "apiVersionId": "ministral-14b-2512",
+    "maxTokens": 131072,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Mistral's mid-range edge model — capable instruction following at low cost.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.15,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "mistral-large-2512",
+    "displayName": "Mistral Large 2512",
+    "provider": "mistral",
+    "apiVersionId": "mistral-large-2512",
+    "maxTokens": 262144,
+    "brand": "Mistral",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Mistral Large December 2025 snapshot — strong multilingual and instruction following.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 1.5,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-2-5-flash",
+    "displayName": "Gemini 2.5 Flash",
+    "provider": "google",
+    "apiVersionId": "gemini-2.5-flash",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Google's fast Gemini 2.5 Flash — low-latency 1M-context completions.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemini-3-1-flash-lite",
+    "displayName": "Gemini 3.1 Flash Lite",
+    "provider": "google",
+    "apiVersionId": "gemini-3.1-flash-lite",
+    "maxTokens": 1048576,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Google's lightest Gemini 3.1 tier — ultra-cheap high-volume completions.",
+    "inputMultiplier": 0.05,
+    "outputMultiplier": 0.2,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gemma-4-31b",
+    "displayName": "Gemma 4 31B IT",
+    "provider": "novita",
+    "apiVersionId": "google/gemma-4-31b-it",
+    "maxTokens": 262144,
+    "brand": "Google",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Google's open-weight Gemma 4 at 31B — stronger reasoning than the 26B variant.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.5,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-4-1",
+    "displayName": "GPT-4.1",
+    "provider": "openai",
+    "apiVersionId": "gpt-4.1",
+    "maxTokens": 1047576,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "OpenAI's GPT-4.1 — strong general reasoning with a large context window.",
+    "inputMultiplier": 2,
+    "outputMultiplier": 8,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-4-1-mini",
+    "displayName": "GPT-4.1 Mini",
+    "provider": "openai",
+    "apiVersionId": "gpt-4.1-mini",
+    "maxTokens": 1047576,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Cost-efficient GPT-4.1 Mini — fast responses at a fraction of flagship pricing.",
+    "inputMultiplier": 0.4,
+    "outputMultiplier": 1.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-4-1-nano",
+    "displayName": "GPT-4.1 Nano",
+    "provider": "openai",
+    "apiVersionId": "gpt-4.1-nano",
+    "maxTokens": 1047576,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "guest",
+    "description": "OpenAI's smallest GPT-4.1 tier — near-zero cost for trivial tasks.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5",
+    "displayName": "GPT-5",
+    "provider": "openai",
+    "apiVersionId": "gpt-5",
+    "maxTokens": 1100000,
+    "brand": "OpenAI",
+    "tier": "premium",
+    "access": "registered",
+    "description": "OpenAI's flagship GPT-5 — top-tier reasoning and instruction following.",
+    "inputMultiplier": 5,
+    "outputMultiplier": 25,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-pro",
+    "displayName": "GPT-5 Pro",
+    "provider": "openai",
+    "apiVersionId": "gpt-5-pro",
+    "maxTokens": 1100000,
+    "brand": "OpenAI",
+    "tier": "premium",
+    "access": "registered",
+    "description": "OpenAI's enhanced GPT-5 Pro tier — maximum capability for demanding agentic tasks.",
+    "inputMultiplier": 12.5,
+    "outputMultiplier": 50,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-5-4-nano",
+    "displayName": "GPT-5.4 Nano",
+    "provider": "openai",
+    "apiVersionId": "gpt-5.4-nano",
+    "maxTokens": 400000,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "guest",
+    "description": "OpenAI's tiniest GPT-5.4 tier — ultra-cheap completions.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "gpt-oss-20b",
+    "displayName": "GPT OSS 20B",
+    "provider": "groq",
+    "apiVersionId": "openai/gpt-oss-20b",
+    "maxTokens": 131072,
+    "brand": "OpenAI",
+    "tier": "standard",
+    "access": "guest",
+    "description": "OpenAI's smaller open-weights OSS at 20B — very cheap completions.",
+    "inputMultiplier": 0.05,
+    "outputMultiplier": 0.2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "o3",
+    "displayName": "OpenAI o3",
+    "provider": "openai",
+    "apiVersionId": "o3",
+    "maxTokens": 200000,
+    "brand": "OpenAI",
+    "tier": "premium",
+    "access": "registered",
+    "description": "OpenAI's o3 — deep reasoning chain-of-thought for the most complex problems.",
+    "inputMultiplier": 10,
+    "outputMultiplier": 40,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "kimi-k2-5",
+    "displayName": "Kimi K2.5 (Moonshot)",
+    "provider": "moonshot",
+    "apiVersionId": "kimi-k2.5",
+    "maxTokens": 262144,
+    "brand": "Moonshot",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Moonshot Kimi K2.5 — long-context model with solid reasoning.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 2.5,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "kimi-k2-7-code",
+    "displayName": "Kimi K2.7 Code",
+    "provider": "moonshot",
+    "apiVersionId": "moonshot/kimi-k2.7-code",
+    "maxTokens": 262144,
+    "brand": "Moonshot",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Moonshot's code-specialized Kimi K2.7 — optimized for code generation and debugging.",
+    "inputMultiplier": 0.66,
+    "outputMultiplier": 3.41,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-4-6",
+    "displayName": "GLM 4.6",
+    "provider": "zai",
+    "apiVersionId": "zai/glm-4.6",
+    "maxTokens": 128000,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Z.ai's GLM 4.6 — upgraded generation with stronger multilingual and code skills.",
+    "inputMultiplier": 0.6,
+    "outputMultiplier": 2.2,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-4-7",
+    "displayName": "GLM 4.7",
+    "provider": "zai",
+    "apiVersionId": "glm-4.7",
+    "maxTokens": 128000,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Z.ai's GLM 4.7 — frontier general-purpose model with enhanced reasoning.",
+    "inputMultiplier": 0.8,
+    "outputMultiplier": 3.2,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5",
+    "displayName": "GLM 5",
+    "provider": "zai",
+    "apiVersionId": "zai/glm-5",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Z.ai's GLM 5 — next-generation flagship with 1M-token context.",
+    "inputMultiplier": 1.4,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-1",
+    "displayName": "GLM 5.1",
+    "provider": "zai",
+    "apiVersionId": "zai/glm-5.1",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Z.ai's GLM 5.1 — enhanced post-GLM 5 release with stronger reasoning.",
+    "inputMultiplier": 1.4,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "minimax-m2",
+    "displayName": "MiniMax M2",
+    "provider": "minimax",
+    "apiVersionId": "minimax-m2",
+    "maxTokens": 1048576,
+    "brand": "MiniMax",
+    "tier": "standard",
+    "access": "registered",
+    "description": "MiniMax M2 — long-context multilingual model with solid instruction following.",
+    "inputMultiplier": 0.3,
+    "outputMultiplier": 1.2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "minimax-m2-5",
+    "displayName": "MiniMax M2.5",
+    "provider": "minimax",
+    "apiVersionId": "minimax-m2.5",
+    "maxTokens": 1048576,
+    "brand": "MiniMax",
+    "tier": "standard",
+    "access": "registered",
+    "description": "MiniMax M2.5 — upgraded mid-tier with improved coding and reasoning.",
+    "inputMultiplier": 0.45,
+    "outputMultiplier": 1.8,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "minimax-m2-7",
+    "displayName": "MiniMax M2.7",
+    "provider": "minimax",
+    "apiVersionId": "minimax-m2.7",
+    "maxTokens": 1048576,
+    "brand": "MiniMax",
+    "tier": "standard",
+    "access": "registered",
+    "description": "MiniMax M2.7 — near-frontier performance at a standard-tier burn rate.",
+    "inputMultiplier": 0.55,
+    "outputMultiplier": 2.2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "llama-3-1-nemotron-ultra",
+    "displayName": "Llama 3.1 Nemotron Ultra 253B",
+    "provider": "nebius",
+    "apiVersionId": "nvidia/llama-3.1-nemotron-ultra-253b",
+    "maxTokens": 131072,
+    "brand": "NVIDIA",
+    "tier": "premium",
+    "access": "registered",
+    "description": "NVIDIA's instruction-tuned Nemotron at 253B — one of the largest open-weight models.",
+    "inputMultiplier": 0.8,
+    "outputMultiplier": 3.2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "mimo-v2-5-pro",
+    "displayName": "MiMo V2.5 Pro",
+    "provider": "novita",
+    "apiVersionId": "xiaomimimo/mimo-v2.5-pro",
+    "maxTokens": 131072,
+    "brand": "MiMo",
+    "tier": "standard",
+    "access": "registered",
+    "description": "MiMo V2.5 Pro — enhanced reasoning and instruction following.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-plus",
+    "displayName": "Qwen Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-plus",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's Qwen Plus — production workhorse with excellent multilingual capabilities.",
+    "inputMultiplier": 0.25,
+    "outputMultiplier": 1,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-flash",
+    "displayName": "Qwen Flash",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-flash",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Alibaba's ultra-fast Qwen Flash — lowest-latency completions in the Qwen family.",
+    "inputMultiplier": 0.04,
+    "outputMultiplier": 0.12,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-vl-plus",
+    "displayName": "Qwen3 VL Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3-vl-plus",
+    "maxTokens": 131072,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's Qwen3 vision-language model. Hybrid-thinking multimodal with native image understanding, document parsing, and visual reasoning.",
+    "inputMultiplier": 0.8,
+    "outputMultiplier": 4.0,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-3-vl-flash",
+    "displayName": "Qwen3 VL Flash",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3-vl-flash",
+    "maxTokens": 131072,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Fast, cheap Qwen3 vision-language model. Image understanding and visual reasoning at a low burn rate — great Free-tier entry into multimodal Qwen.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-vl-max",
+    "displayName": "Qwen VL Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-vl-max",
+    "maxTokens": 131072,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's established Qwen VL Max. High-quality vision-language model for complex image understanding, OCR, and visual question answering.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 2.0,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-vl-plus",
+    "displayName": "Qwen VL Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-vl-plus",
+    "maxTokens": 131072,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's Qwen VL Plus. Balanced vision-language model for everyday multimodal tasks — image captioning, analysis, and document QA.",
+    "inputMultiplier": 0.3,
+    "outputMultiplier": 1.5,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": true,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen-coder-plus",
+    "displayName": "Qwen Coder Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-coder-plus",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's code-optimized Qwen Coder Plus — specialized for software development.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen3-32b",
+    "displayName": "Qwen3 32B",
+    "provider": "nebius",
+    "apiVersionId": "qwen/qwen3-32b",
+    "maxTokens": 131072,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's Qwen3 at 32B — compact, high-quality open-weight reasoning model.",
+    "inputMultiplier": 0.15,
+    "outputMultiplier": 0.6,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen3-max",
+    "displayName": "Qwen3 Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3-max",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Alibaba's flagship Qwen3 Max — top-tier MoE model for complex reasoning.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 3,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen3-coder-plus",
+    "displayName": "Qwen3 Coder Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3-coder-plus",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's Qwen3 code specialist — advanced code generation and agentic dev workflows.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 2,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen3-coder-flash",
+    "displayName": "Qwen3 Coder Flash",
+    "provider": "alibaba",
+    "apiVersionId": "qwen3-coder-flash",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Fast, cheap version of Qwen3 Coder — great Free-tier coding assistant.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwen3-coder-next",
+    "displayName": "Qwen3 Coder Next",
+    "provider": "embercloud",
+    "apiVersionId": "qwen3-coder-next",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "premium",
+    "access": "registered",
+    "description": "Alibaba's next-generation Qwen3 Coder — frontier coding capabilities.",
+    "inputMultiplier": 0.75,
+    "outputMultiplier": 3,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "qwq-plus",
+    "displayName": "QwQ Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwq-plus",
+    "maxTokens": 1048576,
+    "brand": "Alibaba",
+    "tier": "standard",
+    "access": "registered",
+    "description": "Alibaba's QwQ Plus — reasoning-focused model with extended chain-of-thought.",
+    "inputMultiplier": 0.5,
+    "outputMultiplier": 2,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "zaya1-8b",
+    "displayName": "Zaya1 8B",
+    "provider": "zyphra",
+    "apiVersionId": "zaya1-8b",
+    "maxTokens": 131072,
+    "brand": "Zaya",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Zaya1 8B — compact multilingual model with strong Arabic and English capabilities.",
+    "inputMultiplier": 0.1,
+    "outputMultiplier": 0.4,
+    "supportsReasoningEffort": false,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v4-pro-ams",
+    "displayName": "DeepSeek V4 Pro",
+    "provider": "alibaba",
+    "apiVersionId": "deepseek-v4-pro",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "premium",
+    "access": "registered",
+    "description": "DeepSeek V4 Pro served through Alibaba Model Studio (DashScope). Flagship reasoning model with multi-lingual capabilities.",
+    "inputMultiplier": 0.435,
+    "outputMultiplier": 0.87,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v4-flash-0731-ams",
+    "displayName": "DeepSeek V4 Flash 0731",
+    "provider": "alibaba",
+    "apiVersionId": "deepseek-v4-flash-0731",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "standard",
+    "access": "guest",
+    "description": "DeepSeek V4 Flash (July 31 snapshot) served through Alibaba Model Studio. Fast, cost-efficient reasoning.",
+    "inputMultiplier": 0.14,
+    "outputMultiplier": 0.28,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v4-flash-ams",
+    "displayName": "DeepSeek V4 Flash",
+    "provider": "alibaba",
+    "apiVersionId": "deepseek-v4-flash",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "standard",
+    "access": "guest",
+    "description": "DeepSeek V4 Flash served through Alibaba Model Studio. Ultra-fast, cost-efficient model in the V4 family.",
+    "inputMultiplier": 0.14,
+    "outputMultiplier": 0.28,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "deepseek-v3-2-ams",
+    "displayName": "DeepSeek V3.2",
+    "provider": "alibaba",
+    "apiVersionId": "deepseek-v3.2",
+    "maxTokens": 164000,
+    "brand": "DeepSeek",
+    "tier": "standard",
+    "access": "registered",
+    "description": "DeepSeek V3.2 served through Alibaba Model Studio. Strong open-weight reasoning at a competitive burn rate.",
+    "inputMultiplier": 0.25,
+    "outputMultiplier": 0.5,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-2-ams",
+    "displayName": "GLM 5.2",
+    "provider": "alibaba",
+    "apiVersionId": "glm-5.2",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "GLM 5.2 served through Alibaba Model Studio. 1M-context reasoning model with thinking deltas.",
+    "inputMultiplier": 1.4,
+    "outputMultiplier": 4.4,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "glm-5-1-ams",
+    "displayName": "GLM 5.1",
+    "provider": "alibaba",
+    "apiVersionId": "glm-5.1",
+    "maxTokens": 1048576,
+    "brand": "Z.ai",
+    "tier": "standard",
+    "access": "guest",
+    "description": "GLM 5.1 served through Alibaba Model Studio. Previous-gen 1M-context reasoning model.",
+    "inputMultiplier": 1.0,
+    "outputMultiplier": 3.0,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  },
+  {
+    "id": "kimi-k2-7-code-ams",
+    "displayName": "Kimi K2.7 Code",
+    "provider": "alibaba",
+    "apiVersionId": "kimi-k2.7-code",
+    "maxTokens": 262144,
+    "brand": "Moonshot",
+    "tier": "standard",
+    "access": "guest",
+    "description": "Kimi K2.7 Code served through Alibaba Model Studio. Moonshot's latest code-focused model with hybrid thinking.",
+    "inputMultiplier": 0.8,
+    "outputMultiplier": 4.0,
+    "supportsReasoningEffort": true,
+    "supportsAttachments": {
+      "image": false,
+      "audio": false,
+      "video": false,
+      "text": true
+    }
+  }
+]

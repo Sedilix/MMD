@@ -1,0 +1,31 @@
+[package]
+name = "cybrdeck-desktop"
+version = "0.2.0"
+description = "Cybrdeck Desktop Native Client"
+authors = ["Cybrdeck Team"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "app_lib"
+crate-type = ["lib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.11.3", features = ["tray-icon"] }
+tauri-plugin-notification = "2"
+tauri-plugin-process = "2"
+tauri-plugin-updater = "2"
+open = "5"
+
+[profile.release]
+opt-level = "s"
+debug = false
+lto = false
+codegen-units = 1
+incremental = false
+panic = "abort"

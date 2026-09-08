@@ -1,0 +1,14 @@
+{
+  "version": "0.1.8",
+  "exe": {
+    "filename": "Playground_0.1.8_x64-setup.exe",
+    "sizeBytes": 2184353,
+    "sizeFormatted": "2 MB"
+  },
+  "msi": {
+    "filename": "Playground_0.1.8_x64_en-US.msi",
+    "sizeBytes": 2829158,
+    "sizeFormatted": "3 MB"
+  },
+  "updatedAt": "2026-08-30T20:25:26.000Z"
+}

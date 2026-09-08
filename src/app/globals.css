@@ -1,0 +1,716 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/*
+ * Tailwind v4 CSS-native config — migrated from the old tailwind.config.ts so
+ * we no longer depend on @config path resolution, which was breaking under
+ * Next.js 16 / Turbopack (the @tailwindcss/postcss "fix-relative-paths" plugin
+ * bails when PostCSS source-file info isn't passed through, leaving the
+ * ../../tailwind.config.ts path to resolve from the project root and fail —
+ * which cascaded into the proxy module failing to load and the
+ * "adapterFn is not a function" error loop).
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-body: "Inter", sans-serif;
+  --font-headline: "Inter", sans-serif;
+  --font-code: "Inter", sans-serif;
+  --font-mono: "Inter", sans-serif;
+
+  /* shadcn HSL-variable color tokens — kept as utilities so existing
+     `bg-background`, `text-foreground`, `border-border`, etc. keep working. */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Cybrdeck Brand Tokens */
+  --color-surface-base: #021a22;
+  --color-surface-app: #03161c;
+  --color-surface-card: #031d24;
+  --color-accent-emerald: #2f8f6f;
+
+  /* ------------------------------------------------------------------ *
+   * BRAND ACCENT - brass.
+   * Single source of truth. Every accent in the product resolves here via
+   * `brand-*` utilities (text-brand-400, bg-brand-500, border-brand-400/30
+   * and so on), so re-hueing the product means editing this block and
+   * nothing else. This replaced 1,175 hardcoded `cyan-*` classes spread
+   * over 115 files, each of which previously had to be changed by hand.
+   * ------------------------------------------------------------------ */
+  --color-brand-50: #fdf9f0;
+  --color-brand-100: #faf0d9;
+  --color-brand-200: #f3dfb0;
+  --color-brand-300: #e9c884;
+  --color-brand-400: #d8a657;
+  --color-brand-500: #c68f3d;
+  --color-brand-600: #a87231;
+  --color-brand-700: #85582a;
+  --color-brand-800: #6b4626;
+  --color-brand-900: #593b22;
+  --color-brand-950: #33200f;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-slide-in-right: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-fade-in: fade-in 0.4s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Indeterminate progress bar sweep for studio loading regions when the
+     upstream provides no determinate progress. The bar slides across the
+     track instead of filling, so we never imply progress we do not have. */
+  @keyframes indeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+    60% {
+      transform: translateX(280%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@layer base {
+
+  :root,
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 45% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 45% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 37 62% 59%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 37 62% 59%;
+    --radius: 0.75rem;
+    --chart-1: 37 62% 59%;
+    --chart-2: 37 70% 42%;
+    --chart-3: 37 48% 72%;
+    --chart-4: 37 58% 50%;
+    --chart-5: 37 66% 34%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-color: hsl(var(--background));
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+.cybr-glow {
+  box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.glass-morphism {
+  @apply bg-card/60 backdrop-blur-md border border-black/5 shadow-sm;
+}
+
+.task-column-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.task-column-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.task-column-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Infinite Scrolling Ticker */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Infinite Scrolling Partner Marquee */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Center text inside select elements */
+select.text-center {
+  text-align: center;
+  text-align-last: center;
+}
+
+/* Chat waveform animation (voice mode bars) */
+@keyframes waveform {
+
+  0%,
+  100% {
+    height: 30%;
+  }
+
+  50% {
+    height: 100%;
+  }
+}
+
+.waveform-bar {
+  animation: waveform 0.8s ease-in-out infinite;
+}
+
+/* Glassmorphism additions from Events Portal */
+.glass-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glass-blur-md {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-blur-lg {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-panel {
+  background: rgba(10, 25, 35, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(198, 143, 61, 0.15);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(198, 143, 61, 0.4);
+  box-shadow: 0 0 12px rgba(198, 143, 61, 0.15);
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 
+ * Sleek, Minimal, Dark Custom Scrollbars (Subtle & Non-Intrusive)
+ * Replaces default browser scrollbars & removes ugly arrow buttons
+ */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+/*
+ * `scrollbar-none` — WebKit fallback only.
+ *
+ * CORRECTION: an earlier version of this comment claimed the class was
+ * undefined and that its ~14 call sites were silent no-ops. That was wrong.
+ * Tailwind v4 ships `scrollbar-none` (alongside `scrollbar-thin`) and emits
+ * `scrollbar-width: none` for it — the call sites were working. The mistake
+ * was checking this file and the Tailwind config for a definition without
+ * checking what Tailwind itself generates.
+ *
+ * What remains here is a genuine but narrow addition: Tailwind emits only
+ * the standard `scrollbar-width` property, which older WebKit (pre-Chrome
+ * 121 / pre-Safari 18.2) does not support. The `::-webkit-scrollbar` rule
+ * below covers those, and `-ms-overflow-style` covers legacy Edge. Tailwind's
+ * own rule still supplies `scrollbar-width` for everything modern.
+ */
+.scrollbar-none {
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* legacy Edge/IE */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;                    /* WebKit/Blink */
+  width: 0;
+  height: 0;
+}
+
+/* Hero CTA press feedback — instant glow that fades over ~1s. Fires
+   alongside a burst in the Neural Network canvas (mobile hero); see
+   `usePressPulse` / `PressGlow` in src/app/page.tsx. */
+@keyframes press-glow {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 36px 8px rgba(216, 166, 87, 0.85), 0 0 70px 18px rgba(216, 166, 87, 0.35);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 36px 8px rgba(216, 166, 87, 0.85), 0 0 70px 18px rgba(216, 166, 87, 0.35);
+  }
+}
+
+.press-glow-flash {
+  animation: press-glow 1s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press-glow-flash {
+    animation-duration: 0.01s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin,
+  .animate-pulse,
+  .animate-ping,
+  .animate-marquee,
+  .animate-ticker,
+  .waveform-bar {
+    animation-play-state: paused !important;
+  }
+}
+
+/*
+ * Spectral Rim-Light Card
+ * Ports the ContourGlassButton 'rim' language (dispersion: a white-hot core
+ * with a warm fringe on one side and a cool one on the other, spectral falloff
+ * either way, and a genuinely dark opposite arc) onto large panels. A masked
+ * 1.25px ring carries the spectrum, a blurred wider twin carries the bloom.
+ * Pure CSS, resolution-independent.
+ *
+ * The spectrum spans ~290deg rather than a compact comet on purpose. A conic
+ * gradient's angle is not perimeter distance: on a wide panel the long edges
+ * occupy most of the angular range and the short caps almost none, so a narrow
+ * span reads as a speck on the top edge and then smears around a whole cap.
+ * A broad sweep keeps a legible prismatic edge at every point of the cycle.
+ */
+@property --cd-rim-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 210deg;
+}
+
+.cd-spectral-rim {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  padding: 1.25px;
+  background: conic-gradient(
+    from var(--cd-rim-angle),
+    rgba(176, 74, 255, 0) 0deg,
+    rgba(120, 80, 255, 0.06) 40deg,
+    rgba(70, 120, 255, 0.18) 74deg,
+    rgba(56, 226, 255, 0.32) 108deg,
+    /* cool fringe → white core → warm fringe: the dispersion signature */
+    rgba(150, 222, 255, 0.6) 130deg,
+    rgba(255, 255, 255, 0.95) 142deg,
+    rgba(255, 206, 130, 0.64) 156deg,
+    rgba(255, 132, 28, 0.32) 182deg,
+    rgba(255, 46, 66, 0.18) 214deg,
+    rgba(176, 74, 255, 0.06) 250deg,
+    rgba(176, 74, 255, 0) 288deg,
+    rgba(176, 74, 255, 0) 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.85;
+  transition: opacity 0.3s ease-out;
+  /* the animation must sit on this element: --cd-rim-angle is inherits:false,
+     so animating it on an ancestor leaves this gradient on its initial value */
+  animation: cd-rim-spin 16s linear infinite;
+}
+
+/* Blurred, wider twin of the ring = the bloom leaking off the edge */
+.cd-spectral-rim--bloom {
+  padding: 7px;
+  opacity: 0.5;
+  filter: blur(7px);
+}
+
+.cd-crystal:hover .cd-spectral-rim {
+  opacity: 1;
+}
+
+.cd-crystal:hover .cd-spectral-rim--bloom {
+  opacity: 0.62;
+}
+
+@keyframes cd-rim-spin {
+  to {
+    --cd-rim-angle: 570deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-spectral-rim {
+    animation: none;
+  }
+}
+
+/*
+ * Liquid-Glass
+ * Dark clear glass after the liquid-glass UI reference (recent.design
+ * mfayb35): form is carried by edge light, not milky frost. A fixed angular
+ * rim map (key light at 10–11 o'clock, dim right edge, reflected light and a
+ * specular dot along the bottom), a dark separation band just inside the rim,
+ * a faint outer double edge for slab thickness, and a whisper of chromatic
+ * fringe. The pointer adds a soft inner sheen and a gentle rim hotspot fed by
+ * --cd-gx/--cd-gy (written by <CrystalLightField />); at rest it is still.
+ */
+.cd-crystal {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.055) 0%,
+    rgba(255, 255, 255, 0.02) 34%,
+    rgba(255, 255, 255, 0.012) 68%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  -webkit-backdrop-filter: blur(12px) saturate(1.25);
+  backdrop-filter: blur(12px) saturate(1.25);
+  box-shadow:
+    /* dark separation band just inside the bright rim */
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55),
+    inset 0 2px 4px rgba(0, 0, 0, 0.65),
+    inset 0 -1px 3px rgba(0, 0, 0, 0.55),
+    /* faint inner reflected light along the bottom edge */
+    inset 0 -1px 0 rgba(255, 255, 255, 0.09),
+    /* black gap outside the rim, then a faint parallel outer line (thickness) */
+    0 0 0 1px rgba(0, 0, 0, 0.85),
+    0 0 0 2px rgba(255, 255, 255, 0.06),
+    /* chromatic fringe: cool companion, then warm */
+    0 0 0 3px rgba(96, 220, 255, 0.03),
+    0 0 0 4px rgba(255, 96, 120, 0.02),
+    /* ambient depth — no bloom, no light leak */
+    0 10px 24px -8px rgba(0, 0, 0, 0.65),
+    0 24px 48px -20px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.25s ease-out,
+    box-shadow 0.25s ease-out;
+}
+
+.cd-crystal:hover {
+  transform: translateY(-2px);
+}
+
+/* Inner sheen — clear glass front face. Rests as a faint, calm overhead catch. */
+.cd-crystal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 20;
+  background:
+    radial-gradient(
+      240px 160px at 50% -20%,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.02) 48%,
+      transparent 74%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 34%);
+  opacity: 0.55;
+  transition: opacity 0.3s ease-out;
+}
+
+.cd-crystal:hover::before {
+  opacity: 0.9;
+}
+
+/* Rim light ring — masked 1px edge with the fixed angular key-light map
+   (peak at 10–11 o'clock, specular dot at the bottom-right arc). */
+.cd-crystal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 20;
+  padding: 1px;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.5) 0deg,
+      rgba(255, 255, 255, 0.22) 60deg,
+      rgba(255, 255, 255, 0.14) 90deg,
+      rgba(255, 255, 255, 0.26) 120deg,
+      rgba(255, 255, 255, 0.55) 140deg,
+      rgba(255, 255, 255, 0.3) 165deg,
+      rgba(255, 255, 255, 0.4) 180deg,
+      rgba(255, 255, 255, 0.42) 225deg,
+      rgba(255, 255, 255, 0.85) 270deg,
+      rgba(255, 255, 255, 0.95) 315deg,
+      rgba(255, 255, 255, 0.5) 360deg
+    );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.85;
+  transition: opacity 0.3s ease-out;
+}
+
+.cd-crystal:hover::after {
+  opacity: 1;
+}
+
+/* Nested glass panel — for a card sitting inside another .cd-crystal. Drops
+   the backdrop blur (the parent already blurred what is behind) and softens
+   the slab shadows so the two edges do not read as equal weight. */
+.cd-crystal--nested {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.045) 0%,
+    rgba(255, 255, 255, 0.015) 40%,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 1px 2px rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.07),
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 6px 18px -10px rgba(0, 0, 0, 0.6);
+}
+
+.cd-crystal--nested:hover {
+  transform: none;
+}
+
+/* Cyan-tinted liquid glass for featured tracks */
+.cd-crystal--cyan {
+  border-color: rgba(216, 166, 87, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(216, 166, 87, 0.07) 0%,
+    rgba(6, 26, 34, 0.5) 34%,
+    rgba(4, 18, 26, 0.6) 100%
+  );
+}
+
+.cd-crystal--cyan:hover {
+  border-color: rgba(216, 166, 87, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-crystal,
+  .cd-crystal::before,
+  .cd-crystal::after {
+    transition: none;
+  }
+  .cd-crystal:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "src/app/api/one/curiosity-scan/scheduled/route.ts": {
+      "maxDuration": 300
+    },
+    "src/app/api/telegram/webhook/route.ts": {
+      "maxDuration": 300
+    },
+    "src/app/api/telegram/release-webhook/route.ts": {
+      "maxDuration": 300
+    },
+    "src/app/api/marketplace/sync/scheduled/route.ts": {
+      "maxDuration": 120
+    },
+    "src/app/api/one/rag-librarian/scheduled/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}

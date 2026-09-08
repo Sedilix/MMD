@@ -1,0 +1,210 @@
+/*
+ * Community v2 — working draft (warm, light, playful bento direction).
+ *
+ * Isolated per-feature stylesheet (same pattern as src/app/rag/rag.css).
+ * Scoped under `.cdv2` so none of these tokens leak into the live dark
+ * theme. This is a design exploration only — the production /community
+ * page is untouched.
+ *
+ * Reference direction: Nev Flynn (recent.design) — warm cream ground,
+ * soft white cards, pastel accent tiles, big serif display type, and
+ * iOS-style draggable cards with a short lagging shadow trail.
+ */
+
+.cdv2 {
+  /* Ground & surfaces (warm, light) */
+  --cdv2-bg: #f0ebe6;          /* warm cream */
+  --cdv2-surface: #fbf9f7;     /* card white */
+  --cdv2-surface-2: #f6f1ec;   /* recessed well / ghost */
+  --cdv2-line: rgba(32, 26, 22, 0.08);
+
+  /* Ink */
+  --cdv2-ink: #201a16;         /* warm near-black */
+  --cdv2-ink-soft: #6e655c;    /* muted warm gray */
+  --cdv2-ink-faint: #766c62;   /* metadata, keeps >= 4.5:1 on surfaces */
+
+  /* Pastel accent tiles (content categories, used sparingly) */
+  --cdv2-mint: #4ec9a0;
+  --cdv2-sky: #8fbdf5;
+  --cdv2-blush: #f5b8ce;
+  --cdv2-butter: #f6d488;
+  --cdv2-lilac: #cdb6f0;        /* softened nod to brand violet */
+
+  /* Brand accent (single, from docs/blueprint.md) */
+  --cdv2-fuchsia: #de36f5;
+
+  /* Inline form errors */
+  --cdv2-danger: #b3261e;
+
+  /* Soft warm depth (offset, not neon bloom) */
+  --cdv2-shadow-rest: 0 1px 2px rgba(32, 26, 22, 0.05), 0 8px 24px -12px rgba(32, 26, 22, 0.12);
+  --cdv2-shadow-lift: 0 2px 4px rgba(32, 26, 22, 0.06), 0 24px 48px -16px rgba(32, 26, 22, 0.28);
+
+  --cdv2-radius: 28px;
+
+  background-color: var(--cdv2-bg);
+  color: var(--cdv2-ink);
+}
+
+/* Card shell */
+.cdv2-card {
+  background-color: var(--cdv2-surface);
+  border: 1px solid var(--cdv2-line);
+  border-radius: var(--cdv2-radius);
+  box-shadow: var(--cdv2-shadow-rest);
+}
+
+/* Ghost placeholder revealed while a card is lifted */
+.cdv2-ghost {
+  background-color: var(--cdv2-surface-2);
+  border: 1px dashed var(--cdv2-line);
+  border-radius: var(--cdv2-radius);
+}
+
+/* Lagging shadow trail behind a dragged card */
+.cdv2-trail {
+  border-radius: var(--cdv2-radius);
+  background-color: rgba(32, 26, 22, 0.18);
+  filter: blur(18px);
+}
+
+/* Centered pill segmented nav (reference top bar) */
+.cdv2-navtrack {
+  background-color: rgba(32, 26, 22, 0.05);
+  border-radius: 9999px;
+}
+
+.cdv2-navpill-active {
+  background-color: var(--cdv2-surface);
+  box-shadow: 0 1px 2px rgba(32, 26, 22, 0.08);
+}
+
+/* Small circular arrow affordance on accent tiles */
+.cdv2-arrow {
+  background-color: var(--cdv2-surface);
+  color: var(--cdv2-ink);
+  box-shadow: 0 1px 2px rgba(32, 26, 22, 0.12);
+}
+
+/* ── Split-flap member board (old-airport departure counter) ────────
+ * One cell per glyph: two static halves plus two animated flaps that
+ * fold old-down / new-up on change. Warm charcoal halves, cream glyph,
+ * hairline seam — depth from shading, not glow. */
+.cdv2-flap {
+  position: relative;
+  display: inline-block;
+  width: 0.78em;
+  height: 1.25em;
+  border-radius: 0.16em;
+  background: #2b241e;
+  perspective: 4em;
+  font-variant-numeric: tabular-nums;
+}
+
+.cdv2-flap-half,
+.cdv2-flap-anim {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cdv2-flap-half > span,
+.cdv2-flap-anim > span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.25em;
+  line-height: 1.25em;
+}
+
+.cdv2-flap-top,
+.cdv2-flap-anim-top {
+  top: 0;
+  border-radius: 0.16em 0.16em 0 0;
+  background: #37302a;
+}
+
+.cdv2-flap-bottom,
+.cdv2-flap-anim-bottom {
+  bottom: 0;
+  border-radius: 0 0 0.16em 0.16em;
+  background: #2b241e;
+}
+
+.cdv2-flap-bottom > span,
+.cdv2-flap-anim-bottom > span {
+  top: -0.625em;
+}
+
+.cdv2-flap-anim-top {
+  z-index: 2;
+  transform-origin: 50% 100%;
+  backface-visibility: hidden;
+  animation: cdv2-flap-down 0.3s ease-in forwards;
+}
+
+.cdv2-flap-anim-bottom {
+  z-index: 3;
+  transform: rotateX(90deg);
+  transform-origin: 50% 0%;
+  backface-visibility: hidden;
+  animation: cdv2-flap-up 0.3s ease-out 0.3s forwards;
+}
+
+@keyframes cdv2-flap-down {
+  to {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes cdv2-flap-up {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.cdv2-flap-seam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 0.5px);
+  height: 1px;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Event tile rotation: the incoming card slides up like a board flip */
+.cdv2-event-swap {
+  animation: cdv2-event-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cdv2-event-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cdv2,
+  .cdv2 * {
+    scroll-behavior: auto;
+  }
+
+  .cdv2-flap-anim {
+    animation: none;
+    display: none;
+  }
+
+  .cdv2-event-swap {
+    animation: none;
+  }
+}

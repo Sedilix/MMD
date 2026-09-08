@@ -1,0 +1,279 @@
+{
+  "partners": [
+    {
+      "id": "kltan",
+      "name": "KLTAN LLC",
+      "slug": "kltan",
+      "category": "Intellectual Property Law",
+      "description": "Providing specialized legal counsel in patent protection, trademark registration, copyright, and transactional IP strategy.",
+      "logo": "kl_tan_v2.png",
+      "logoConfig": {
+        "height": 45,
+        "flexWidth": 140,
+        "imgWidth": 140
+      },
+      "bgWhite": true,
+      "tags": [
+        "legal",
+        "ip",
+        "patent",
+        "trademark"
+      ],
+      "website": "https://kltanlaw.com"
+    },
+    {
+      "id": "osome",
+      "name": "Osome",
+      "slug": "osome",
+      "category": "Finance & Invoicing Backend",
+      "description": "Automated invoicing, real-time ledger sync, and local compliance matching for remote operator billing globally.",
+      "logo": "osome_logo_blue.svg",
+      "logoConfig": {
+        "height": 45,
+        "flexWidth": 140,
+        "imgWidth": 140
+      },
+      "tags": [
+        "fintech",
+        "accounting",
+        "invoicing",
+        "compliance"
+      ],
+      "website": "https://osome.com"
+    },
+    {
+      "id": "sg_innovation",
+      "name": "SG Innovation",
+      "slug": "sg_innovation",
+      "category": "Government & Research",
+      "description": "Advancing Singapore's research and innovation ecosystem through strategic partnerships, funding programmes, and collaborative platforms for deep tech ventures.",
+      "logo": "sg_innovation_logo.png",
+      "logoConfig": {
+        "height": 70,
+        "flexWidth": 110,
+        "imgWidth": 200
+      },
+      "bgWhite": true,
+      "tags": [
+        "government",
+        "research",
+        "innovation",
+        "singapore"
+      ],
+      "website": "https://www.sginnovation.gov.sg"
+    },
+    {
+      "id": "indusit",
+      "name": "IndusIT",
+      "slug": "indusit",
+      "category": "Infrastructure & Edge Nodes",
+      "description": "Provisioning high-performance private cloud database matrices and secure Zero-Egress local server infrastructure.",
+      "logo": "IndusIT.png",
+      "logoConfig": {
+        "height": 70,
+        "flexWidth": 110,
+        "imgWidth": 300
+      },
+      "tags": [
+        "infrastructure",
+        "cloud",
+        "edge",
+        "security"
+      ],
+      "website": "https://indusit.io"
+    },
+    {
+      "id": "hwinfotech",
+      "name": "Hwinfotech",
+      "slug": "hwinfotech",
+      "category": "Growth & Media",
+      "description": "We HW Infotech is a Website Design and Development company based out in Gurugram, India.",
+      "logo": "hwinfotech.png",
+      "logoConfig": {
+        "height": 60,
+        "flexWidth": 140,
+        "imgWidth": 200
+      },
+      "bgWhite": true,
+      "tags": [
+        "media",
+        "growth"
+      ]
+    },
+    {
+      "id": "iinfinitty",
+      "name": "Iinfinitty Media Tech",
+      "slug": "iinfinitty",
+      "category": "Growth & B2B Strategy",
+      "description": "B2B client acquisitions pipeline, connecting enterprise systems with specialized developer rosters in the collective.",
+      "logo": "Iinfinitty Media_Tech.png",
+      "logoConfig": {
+        "height": 70,
+        "flexWidth": 160,
+        "imgWidth": 280
+      },
+      "tags": [
+        "b2b",
+        "growth",
+        "media",
+        "strategy"
+      ],
+      "website": "https://iinfinitty.com"
+    },
+    {
+      "id": "speechmatics",
+      "name": "Speechmatics",
+      "slug": "speechmatics",
+      "category": "AI & Voice",
+      "description": "Speechmatics is a technology company based in Cambridge, England, which develops automatic speech recognition software (ASR) based on recurrent neural networks and statistical language modelling.",
+      "logo": "speechmatics.svg",
+      "logoConfig": {
+        "height": 50,
+        "flexWidth": 150,
+        "imgWidth": 150
+      },
+      "bgWhite": true,
+      "tags": [
+        "ai",
+        "voice"
+      ]
+    },
+    {
+      "id": "drbartha",
+      "name": "Dr. Bartha Toys",
+      "slug": "drbartha",
+      "category": "EdTech",
+      "description": "DrBartha Toys (by BrixIT Pte. Ltd.) is an innovative EdTech company that makes computer science accessible to young learners. They manufacture screen-free, software-enabled coding kits designed for children aged 4 to 14. By combining tactile, magnetic coding bricks with an interactive, battery-powered console, DrBartha allows kids to master foundational programming conceptsâ€”such as loops, conditionals, and variablesâ€”entirely through physical play without the need for computers or internet connections. Advanced learners can also connect the hardware via an open-source Python SDK to control external robots and custom electronics.",
+      "logo": "DrBartha_Logo-04_red.png",
+      "logoConfig": {
+        "height": 70,
+        "flexWidth": 90,
+        "imgWidth": 160
+      },
+      "tags": [
+        "edtech",
+        "coding",
+        "stem",
+        "children",
+        "hardware"
+      ],
+      "website": "https://drbartha.com"
+    },
+    {
+      "id": "crossworks",
+      "name": "Crossworks",
+      "slug": "crossworks",
+      "category": "Partner",
+      "description": "Crossworks is a partner in the Cybrdeck ecosystem. A fuller description will be added once more information is available.",
+      "logo": "Crossworks.png",
+      "logoConfig": {
+        "height": 60,
+        "flexWidth": 140,
+        "imgWidth": 200
+      },
+      "bgWhite": true,
+      "tags": [
+        "crossworks"
+      ]
+    },
+    {
+      "id": "petani",
+      "name": "Petani AI",
+      "slug": "petani",
+      "category": "AI Community & Ecosystem",
+      "description": "A content and distribution engine for AI builders in Southeast Asia, fostering the regional tech ecosystem through developer events and networks.",
+      "logo": "petani_logo.png",
+      "logoConfig": {
+        "height": 50,
+        "flexWidth": 140,
+        "imgWidth": 180
+      },
+      "tags": [
+        "ai",
+        "community",
+        "developers",
+        "singapore"
+      ],
+      "website": "https://lu.ma/petani"
+    },
+    {
+      "id": "oomero",
+      "name": "Oomero",
+      "slug": "oomero",
+      "category": "Partner",
+      "description": "Oomero is a partner in the Cybrdeck ecosystem. A fuller description will be added once more information is available.",
+      "logo": "Oomero.png",
+      "logoConfig": {
+        "height": 60,
+        "flexWidth": 140,
+        "imgWidth": 200
+      },
+      "bgWhite": true,
+      "tags": [
+        "oomero"
+      ]
+    },
+    {
+      "id": "aforgood",
+      "name": "Alliance For Good",
+      "slug": "aforgood",
+      "category": "AI Governance & Philantropy Company",
+      "description": "Alliance for Good hosts the world-renowned Business and Philanthropy Forum, which is a premier Singapore-based gathering that brings together global business leaders, family offices, and philanthropists.",
+      "logo": "aforgood.png",
+      "logoConfig": {
+        "height": 60,
+        "flexWidth": 140,
+        "imgWidth": 200
+      },
+      "tags": [
+        "ai",
+        "governance",
+        "philanthropy",
+        "singapore"
+      ]
+    },
+    {
+      "id": "llmapi",
+      "name": "LLM API",
+      "slug": "llmapi",
+      "category": "API Gateway",
+      "description": "LLM API is a secure, high-performance API gateway that routes and load-balances queries across multiple large language models under a single endpoint.",
+      "logo": "LLMAPI.png",
+      "logoConfig": {
+        "height": 60,
+        "flexWidth": 140,
+        "imgWidth": 200
+      },
+      "bgWhite": true,
+      "tags": [
+        "llm",
+        "api",
+        "gateway",
+        "infrastructure"
+      ],
+      "website": "https://llmapi.ai"
+    },
+    {
+      "id": "aequitas",
+      "name": "Aequitas Law LLP",
+      "slug": "aequitas",
+      "category": "Full-Service Legal Counsel",
+      "description": "A full-service Singapore law firm advising local and overseas clients on dispute resolution, corporate & commercial matters, intellectual property, and real estate.",
+      "logo": "aqt.png",
+      "logoConfig": {
+        "height": 45,
+        "flexWidth": 200,
+        "imgWidth": 200
+      },
+      "bgWhite": true,
+      "tags": [
+        "legal",
+        "law",
+        "dispute-resolution",
+        "corporate",
+        "singapore"
+      ],
+      "website": "https://www.aqt.sg"
+    }
+  ]
+}

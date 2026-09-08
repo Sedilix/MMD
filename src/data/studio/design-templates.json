@@ -1,0 +1,44 @@
+[
+  {
+    "id": "instagram-post",
+    "name": "Instagram Post",
+    "width": 1080,
+    "height": 1080,
+    "category": "Social Media"
+  },
+  {
+    "id": "instagram-story",
+    "name": "Instagram Story",
+    "width": 1080,
+    "height": 1920,
+    "category": "Social Media"
+  },
+  {
+    "id": "youtube-thumbnail",
+    "name": "YouTube Thumbnail",
+    "width": 1280,
+    "height": 720,
+    "category": "Marketing"
+  },
+  {
+    "id": "youtube-banner",
+    "name": "YouTube Banner",
+    "width": 2560,
+    "height": 1440,
+    "category": "Marketing"
+  },
+  {
+    "id": "presentation-16-9",
+    "name": "Presentation (16:9)",
+    "width": 1920,
+    "height": 1080,
+    "category": "Presentations"
+  },
+  {
+    "id": "a4-document",
+    "name": "A4 Document",
+    "width": 794,
+    "height": 1123,
+    "category": "Print"
+  }
+]

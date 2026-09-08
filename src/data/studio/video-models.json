@@ -1,0 +1,1036 @@
+{
+  "providerCaps": {
+    "dashscope": {
+      "videoSynthesis": 15,
+      "videoEdit": 10
+    },
+    "llmapi": 30
+  },
+  "creditTiers": {
+    "budget": {
+      "creditsPerSec": 80,
+      "models": [
+        "wan2.1-t2v-turbo",
+        "wan2.1-t2v-plus",
+        "wan2.1-i2v-turbo",
+        "wan2.1-i2v-plus",
+        "wan2.2-i2v-flash",
+        "wan2.2-kf2v-flash",
+        "wan2.2-t2v-plus",
+        "wan2.2-i2v-plus",
+        "wan2.1-kf2v-plus",
+        "hunyuan-fast-t2v-llmapi",
+        "hunyuan-i2v-llmapi",
+        "seedance-lite-t2v",
+        "seedance-lite-i2v"
+      ]
+    },
+    "standard": {
+      "creditsPerSec": 120,
+      "models": [
+        "wan2.5-t2v-preview",
+        "wan2.5-i2v-preview",
+        "wan2.6-t2v",
+        "wan2.6-i2v-flash",
+        "wan2.6-r2v-flash",
+        "wan2.6-r2v",
+        "wan2.7-t2v-2026-06-12",
+        "wan2.7-i2v-2026-04-25",
+        "wan2.7-r2v-2026-06-12",
+        "wan2.1-vace-plus",
+        "wan2.7-videoedit",
+        "happyhorse-1.0-t2v",
+        "happyhorse-1.0-i2v",
+        "happyhorse-1.0-video-edit",
+        "happyhorse-1.1-t2v",
+        "happyhorse-1.1-i2v",
+        "happyhorse-1.1-r2v",
+        "wan2.2-animate-move",
+        "veo3.1-lite-t2v",
+        "wan2.6-t2v-llmapi",
+        "wan2.7-t2v-llmapi",
+        "wan2.6-i2v-llmapi",
+        "wan2.7-i2v-llmapi",
+        "hunyuan-t2v-llmapi",
+        "grok-t2v",
+        "grok-i2v",
+        "vidu-v2.0-t2v",
+        "vidu-v2.0-i2v",
+        "pixverse-v6-t2v",
+        "pixverse-v6-i2v",
+        "ltx-2-fast-t2v",
+        "ltx-2-fast-i2v",
+        "runway-t2v",
+        "runway-i2v",
+        "kling-v2.1-master-t2v",
+        "kling-v2.1-master-i2v",
+        "kling-v2.6-pro-t2v",
+        "kling-v2.6-pro-i2v",
+        "kling-v2.5-turbo-pro-t2v",
+        "kling-v2.5-turbo-pro-i2v",
+        "minimax-hailuo-2.3-standard-t2v",
+        "minimax-hailuo-2.3-standard-i2v",
+        "minimax-hailuo-2.3-fast-i2v",
+        "seedance-pro-t2v",
+        "seedance-pro-t2v-fast",
+        "seedance-pro-i2v",
+        "seedance-pro-i2v-fast",
+        "sd-2-t2v",
+        "sd-2-t2v-fast",
+        "sd-2-i2v",
+        "sd-2-i2v-fast",
+        "wan2.7-reference-to-video",
+        "video-effects"
+      ]
+    },
+    "premium": {
+      "creditsPerSec": 200,
+      "models": [
+        "veo3.1-t2v",
+        "veo3.1-fast-t2v",
+        "veo3-t2v",
+        "veo3-fast-t2v",
+        "veo3.1-i2v",
+        "veo3.1-reference-to-video",
+        "kling-v3-pro-t2v",
+        "kling-v3-pro-i2v",
+        "kling-o1-t2v",
+        "kling-o1-i2v",
+        "seedance-v1.5-pro-t2v",
+        "seedance-v1.5-pro-t2v-fast",
+        "seedance-v1.5-pro-i2v",
+        "seedance-v1.5-pro-i2v-fast",
+        "ltx-2-pro-t2v",
+        "ltx-2-pro-i2v",
+        "midjourney-v7-i2v",
+        "kling-o1-reference-to-video",
+        "vidu-q2-pro-start-end-video",
+        "pixverse-v6-transition",
+        "minimax-hailuo-2.3-pro-t2v",
+        "minimax-hailuo-2.3-pro-i2v"
+      ]
+    }
+  },
+  "models": [
+    {
+      "id": "liveportrait-v1",
+      "displayName": "LivePortrait Animation (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "liveportrait-v1",
+      "capability": "animate",
+      "maxDurationSec": 10,
+      "creditsPerSec": 100,
+      "description": "Alibaba Cloud Model Studio real-time portrait driving, facial expression animation, and talking-head synthesis."
+    },
+    {
+      "id": "happyhorse-1.1-t2v",
+      "displayName": "HappyHorse 1.1 Text-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "happyhorse-1.1-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Premier physical-realism text-to-video model. High motion smoothness and 1080p photorealism."
+    },
+    {
+      "id": "happyhorse-1.1-i2v",
+      "displayName": "HappyHorse 1.1 Image-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "happyhorse-1.1-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Animate static graphics and first-frame artwork into smooth-motion video using HappyHorse 1.1."
+    },
+    {
+      "id": "happyhorse-1.1-r2v",
+      "displayName": "HappyHorse 1.1 Reference-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "happyhorse-1.1-r2v",
+      "capability": "r2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Synthesize video scenes from multiple reference subject images using HappyHorse 1.1."
+    },
+    {
+      "id": "happyhorse-1.0-video-edit",
+      "displayName": "HappyHorse 1.0 Video Editor (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "happyhorse-1.0-video-edit",
+      "capability": "editor",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "AI video editing engine. Style transfer, character costume swap, and local replacement via video & reference image."
+    },
+    {
+      "id": "happyhorse-1.0-t2v",
+      "displayName": "HappyHorse 1.0 Text-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "happyhorse-1.0-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Standard HappyHorse text-to-video synthesis engine."
+    },
+    {
+      "id": "happyhorse-1.0-i2v",
+      "displayName": "HappyHorse 1.0 Image-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "happyhorse-1.0-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Standard HappyHorse image-to-video synthesis engine."
+    },
+    {
+      "id": "wan2.7-videoedit",
+      "displayName": "Wan 2.7 Multimodal Video Editor (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.7-videoedit",
+      "capability": "editor",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Next-generation Wan 2.7 instruction-based video editor supporting claymation/anime style transfer, clothing modification, and object replacement with up to 4 reference images."
+    },
+    {
+      "id": "wan2.7-t2v-2026-06-12",
+      "displayName": "Wan 2.7 Text-to-Video (AMS 2026)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.7-t2v-2026-06-12",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Next-generation Wan 2.7 multi-shot text-to-video engine with automated prompt extension."
+    },
+    {
+      "id": "wan2.7-i2v-2026-04-25",
+      "displayName": "Wan 2.7 Multimodal Image-to-Video (AMS 2026)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.7-i2v-2026-04-25",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Advanced Wan 2.7 multimodal video generation supporting audio-driven lip sync, first+last frame interpolation, and video continuation."
+    },
+    {
+      "id": "wan2.6-i2v-flash",
+      "displayName": "Wan 2.6 Image-to-Video Flash (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.6-i2v-flash",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 120,
+      "description": "High-speed image-to-video synthesis engine with native audio dubbing, multi-shot narrative control (shot_type: multi), and 1080p output."
+    },
+    {
+      "id": "wan2.5-i2v-preview",
+      "displayName": "Wan 2.5 Image-to-Video Preview (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.5-i2v-preview",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 120,
+      "description": "Image-to-video synthesis engine supporting automatic dubbing or custom audio input."
+    },
+    {
+      "id": "wan2.2-i2v-flash",
+      "displayName": "Wan 2.2 Image-to-Video Flash (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.2-i2v-flash",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Fast 720p image-to-video animation engine."
+    },
+    {
+      "id": "wan2.2-i2v-plus",
+      "displayName": "Wan 2.2 Image-to-Video Plus (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.2-i2v-plus",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "High-fidelity 1080p image-to-video animation engine."
+    },
+    {
+      "id": "wan2.1-i2v-turbo",
+      "displayName": "Wan 2.1 Image-to-Video Turbo (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.1-i2v-turbo",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Turbo 720p image-to-video animation engine."
+    },
+    {
+      "id": "wan2.1-i2v-plus",
+      "displayName": "Wan 2.1 Image-to-Video Plus (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.1-i2v-plus",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Standard 720p image-to-video animation engine."
+    },
+    {
+      "id": "wan2.7-r2v-2026-06-12",
+      "displayName": "Wan 2.7 Multimodal Reference-to-Video (AMS 2026)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.7-r2v-2026-06-12",
+      "capability": "r2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Synthesize scenes featuring multi-subject character images/videos with voice cloning & preservation across shots."
+    },
+    {
+      "id": "wan2.6-r2v-flash",
+      "displayName": "Wan 2.6 Reference-to-Video Flash (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.6-r2v-flash",
+      "capability": "r2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "High-speed multi-character reference-to-video synthesis supporting audio/voice extraction and up to 5 image/video subject references."
+    },
+    {
+      "id": "wan2.6-r2v",
+      "displayName": "Wan 2.6 Reference-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.6-r2v",
+      "capability": "r2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "High-fidelity multi-character reference-to-video synthesis engine."
+    },
+    {
+      "id": "wan2.6-t2v",
+      "displayName": "Wan 2.6 Text-to-Video (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.6-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Advanced text-to-video model with native audio dubbing, multi-shot narrative control (shot_type: multi), and 1080p resolution."
+    },
+    {
+      "id": "wan2.5-t2v-preview",
+      "displayName": "Wan 2.5 Text-to-Video Preview (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.5-t2v-preview",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Text-to-video engine with automatic sound effect / BGM dubbing or custom audio file input."
+    },
+    {
+      "id": "wan2.2-t2v-plus",
+      "displayName": "Wan 2.2 Video Plus (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.2-t2v-plus",
+      "capability": "t2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "High-fidelity text-to-video engine with 1080p rendering and silent video output."
+    },
+    {
+      "id": "wan2.1-t2v-turbo",
+      "displayName": "Wan 2.1 Video Turbo (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.1-t2v-turbo",
+      "capability": "t2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Fast 720p text-to-video generation engine."
+    },
+    {
+      "id": "wan2.1-t2v-plus",
+      "displayName": "Wan 2.1 Video Plus (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.1-t2v-plus",
+      "capability": "t2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Flagship text-to-video synthesis engine. High motion coherence and cinematic rendering."
+    },
+    {
+      "id": "wan2.1-vace-plus",
+      "displayName": "Wan 2.1 Unified Video Editing (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.1-vace-plus",
+      "capability": "editor",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Unified multimodal video editing engine supporting multi-image reference, video repainting (pose/depth transfer), local element editing with tracking masks, video extension, and outpainting."
+    },
+    {
+      "id": "wan2.2-kf2v-flash",
+      "displayName": "Wan 2.2 First & Last Frame Flash (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.2-kf2v-flash",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Generate smooth video transition between a specified first frame and last frame image with text prompt control. Supports 480P, 720P, and 1080P resolutions."
+    },
+    {
+      "id": "wan2.1-kf2v-plus",
+      "displayName": "Wan 2.1 First & Last Frame Plus (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.1-kf2v-plus",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "High-fidelity keyframe transition engine generating video between a first frame and last frame image at 720P."
+    },
+    {
+      "id": "wan2.2-animate-move",
+      "displayName": "Wan 2.2 Animate-Move (AMS)",
+      "provider": "alibaba",
+      "apiVersionId": "wan2.2-animate-move",
+      "capability": "animate",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Action-transfer engine. Animate a character image by transferring actions and expressions from a reference video. Low-cost alternative to motion capture. Supports wan-std (fast) and wan-pro (high quality) service modes."
+    },
+    {
+      "id": "veo3.1-t2v",
+      "displayName": "Veo 3.1 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "veo3.1-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Google Veo 3.1 text-to-video with native synchronized audio. Cinematic quality, prompt-faithful motion."
+    },
+    {
+      "id": "veo3.1-fast-t2v",
+      "displayName": "Veo 3.1 Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "veo3.1-fast-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 160,
+      "description": "Faster Veo 3.1 text-to-video variant. Lower latency, native audio, slightly reduced fidelity vs the full model."
+    },
+    {
+      "id": "veo3.1-lite-t2v",
+      "displayName": "Veo 3.1 Lite T2V",
+      "provider": "llmapi",
+      "apiVersionId": "veo3.1-lite-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 120,
+      "description": "Lightweight Veo 3.1 text-to-video for rapid iteration. Native audio preserved."
+    },
+    {
+      "id": "veo3-t2v",
+      "displayName": "Veo 3 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "veo3-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Google Veo 3 text-to-video generation with cinematic motion and detailed prompt adherence."
+    },
+    {
+      "id": "veo3-fast-t2v",
+      "displayName": "Veo 3 Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "veo3-fast-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 160,
+      "description": "Faster Veo 3 text-to-video. Quick turnaround for concept previews."
+    },
+    {
+      "id": "kling-v2.1-master-t2v",
+      "displayName": "Kling V2.1 Master T2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v2.1-master-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Kling 2.1 Master text-to-video. Premium motion fidelity, complex scene choreography."
+    },
+    {
+      "id": "kling-v2.6-pro-t2v",
+      "displayName": "Kling V2.6 Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v2.6-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Kling 2.6 Pro text-to-video. Improved prompt understanding and realistic human motion."
+    },
+    {
+      "id": "kling-v2.5-turbo-pro-t2v",
+      "displayName": "Kling V2.5 Turbo Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v2.5-turbo-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Kling 2.5 Turbo Pro text-to-video. Fast generation with pro-tier motion quality."
+    },
+    {
+      "id": "kling-v2.5-turbo-pro-i2v",
+      "displayName": "Kling V2.5 Turbo Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v2.5-turbo-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Kling 2.5 Turbo Pro image-to-video. Fast pro-tier animation from a single first frame."
+    },
+    {
+      "id": "kling-v3-pro-t2v",
+      "displayName": "Kling V3 Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v3-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Latest Kling V3 Pro text-to-video. Top-tier cinematic quality with extended prompt control."
+    },
+    {
+      "id": "kling-o1-t2v",
+      "displayName": "Kling O1 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-o1-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Kling O1 reasoning text-to-video. Scene planning and physics-aware motion synthesis."
+    },
+    {
+      "id": "seedance-lite-t2v",
+      "displayName": "Seedance Lite T2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-lite-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Seedance Lite text-to-video. Budget-friendly fast motion synthesis for quick concept tests."
+    },
+    {
+      "id": "seedance-lite-i2v",
+      "displayName": "Seedance Lite I2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-lite-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Seedance Lite image-to-video. Budget-friendly first-frame animation for rapid iteration."
+    },
+    {
+      "id": "seedance-v1.5-pro-t2v",
+      "displayName": "Seedance V1.5 Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-v1.5-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Seedance V1.5 Pro text-to-video. Dance choreography and high-action motion specialist."
+    },
+    {
+      "id": "seedance-v1.5-pro-t2v-fast",
+      "displayName": "Seedance V1.5 Pro Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-v1.5-pro-t2v-fast",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Seedance V1.5 Pro Fast text-to-video. Lower-latency variant of the premium dance/choreography model."
+    },
+    {
+      "id": "seedance-pro-t2v",
+      "displayName": "Seedance Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance Pro text-to-video. Reliable motion synthesis for general scenes."
+    },
+    {
+      "id": "seedance-pro-t2v-fast",
+      "displayName": "Seedance Pro Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-pro-t2v-fast",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance Pro Fast text-to-video. Quicker turnaround for general scenes."
+    },
+    {
+      "id": "seedance-pro-i2v",
+      "displayName": "Seedance Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance Pro image-to-video. Reliable motion synthesis from a single first frame."
+    },
+    {
+      "id": "seedance-pro-i2v-fast",
+      "displayName": "Seedance Pro Fast I2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-pro-i2v-fast",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance Pro Fast image-to-video. Quicker animation from a single first frame."
+    },
+    {
+      "id": "sd-2-t2v",
+      "displayName": "Seedance 2 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "sd-2-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance 2 next-gen text-to-video. Improved dynamics and camera-aware rendering."
+    },
+    {
+      "id": "sd-2-t2v-fast",
+      "displayName": "Seedance 2 Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "sd-2-t2v-fast",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance 2 Fast text-to-video. Lower latency, same next-gen dynamics."
+    },
+    {
+      "id": "sd-2-i2v",
+      "displayName": "Seedance 2 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "sd-2-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance 2 next-gen image-to-video. Improved dynamics and camera-aware rendering from a first frame."
+    },
+    {
+      "id": "sd-2-i2v-fast",
+      "displayName": "Seedance 2 Fast I2V",
+      "provider": "llmapi",
+      "apiVersionId": "sd-2-i2v-fast",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Seedance 2 Fast image-to-video. Lower latency animation from a single first frame."
+    },
+    {
+      "id": "wan2.6-t2v-llmapi",
+      "displayName": "Wan 2.6 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "wan2.6-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Wan 2.6 text-to-video via LLMAPI. Coherent multi-shot storytelling."
+    },
+    {
+      "id": "wan2.7-t2v-llmapi",
+      "displayName": "Wan 2.7 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "wan2.7-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Wan 2.7 text-to-video via LLMAPI. Latest Wan generation with prompt extension."
+    },
+    {
+      "id": "hunyuan-fast-t2v-llmapi",
+      "displayName": "HunyuanVideo Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "hunyuan-fast-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Tencent HunyuanVideo Fast. Lowest-latency text-to-video in the registry."
+    },
+    {
+      "id": "hunyuan-t2v-llmapi",
+      "displayName": "HunyuanVideo T2V",
+      "provider": "llmapi",
+      "apiVersionId": "hunyuan-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 120,
+      "description": "Tencent HunyuanVideo standard text-to-video. Balanced quality and speed."
+    },
+    {
+      "id": "grok-t2v",
+      "displayName": "Grok Imagine T2V",
+      "provider": "llmapi",
+      "apiVersionId": "grok-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "xAI Grok Imagine text-to-video. Conversational, witty scene generation."
+    },
+    {
+      "id": "vidu-v2.0-t2v",
+      "displayName": "Vidu V2.0 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "vidu-v2.0-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 120,
+      "description": "Vidu V2.0 text-to-video. Strong character consistency and BGM support."
+    },
+    {
+      "id": "pixverse-v6-t2v",
+      "displayName": "Pixverse V6 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "pixverse-v6-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 120,
+      "description": "Pixverse V6 text-to-video. Stylized outputs and creative camera moves."
+    },
+    {
+      "id": "runway-t2v",
+      "displayName": "Runway T2V",
+      "provider": "llmapi",
+      "apiVersionId": "runway-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Runway text-to-video. Industry-standard cinematic output."
+    },
+    {
+      "id": "ltx-2-pro-t2v",
+      "displayName": "LTX-2 Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "ltx-2-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "LTX-2 Pro text-to-video. High-quality pro-tier rendering."
+    },
+    {
+      "id": "ltx-2-fast-t2v",
+      "displayName": "LTX-2 Fast T2V",
+      "provider": "llmapi",
+      "apiVersionId": "ltx-2-fast-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "LTX-2 Fast text-to-video. Quick iteration with good baseline quality."
+    },
+    {
+      "id": "minimax-hailuo-2.3-standard-t2v",
+      "displayName": "Hailuo 2.3 T2V",
+      "provider": "llmapi",
+      "apiVersionId": "minimax-hailuo-2.3-standard-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 6,
+      "creditsPerSec": 120,
+      "description": "Hailuo 2.3 text-to-video. Cinematic realism with natural human motion."
+    },
+    {
+      "id": "minimax-hailuo-2.3-pro-t2v",
+      "displayName": "Hailuo 2.3 Pro T2V",
+      "provider": "llmapi",
+      "apiVersionId": "minimax-hailuo-2.3-pro-t2v",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Hailuo 2.3 Pro text-to-video. Premium cinematic quality with extended duration."
+    },
+    {
+      "id": "veo3.1-i2v",
+      "displayName": "Veo 3.1 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "veo3.1-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Google Veo 3.1 image-to-video with native synchronized audio. Animates a single first-frame image with cinematic motion."
+    },
+    {
+      "id": "kling-v2.1-master-i2v",
+      "displayName": "Kling V2.1 Master I2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v2.1-master-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Kling 2.1 Master image-to-video. Premium motion fidelity from a single first-frame image."
+    },
+    {
+      "id": "kling-v2.6-pro-i2v",
+      "displayName": "Kling V2.6 Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v2.6-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Kling 2.6 Pro image-to-video. Improved prompt understanding and realistic human motion from a first frame."
+    },
+    {
+      "id": "kling-v3-pro-i2v",
+      "displayName": "Kling V3 Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-v3-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Latest Kling V3 Pro image-to-video. Cinematic motion synthesis from a single reference frame."
+    },
+    {
+      "id": "kling-o1-i2v",
+      "displayName": "Kling O1 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "kling-o1-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Kling O1 reasoning image-to-video. Physics-aware motion planning from a first-frame image."
+    },
+    {
+      "id": "seedance-v1.5-pro-i2v",
+      "displayName": "Seedance V1.5 Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-v1.5-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Seedance V1.5 Pro image-to-video. Dance and high-action motion specialist."
+    },
+    {
+      "id": "seedance-v1.5-pro-i2v-fast",
+      "displayName": "Seedance V1.5 Pro Fast I2V",
+      "provider": "llmapi",
+      "apiVersionId": "seedance-v1.5-pro-i2v-fast",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Seedance V1.5 Pro Fast image-to-video. Lower-latency premium dance/choreography animation."
+    },
+    {
+      "id": "wan2.6-i2v-llmapi",
+      "displayName": "Wan 2.6 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "wan2.6-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Wan 2.6 image-to-video via LLMAPI. Coherent multi-shot first-frame animation."
+    },
+    {
+      "id": "wan2.7-i2v-llmapi",
+      "displayName": "Wan 2.7 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "wan2.7-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Wan 2.7 image-to-video via LLMAPI. Latest Wan generation animating a single first frame."
+    },
+    {
+      "id": "hunyuan-i2v-llmapi",
+      "displayName": "HunyuanVideo I2V",
+      "provider": "llmapi",
+      "apiVersionId": "hunyuan-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 5,
+      "creditsPerSec": 80,
+      "description": "Tencent HunyuanVideo image-to-video. Fast first-frame animation."
+    },
+    {
+      "id": "grok-i2v",
+      "displayName": "Grok Imagine I2V",
+      "provider": "llmapi",
+      "apiVersionId": "grok-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "xAI Grok Imagine image-to-video. Conversational, witty motion synthesis from a first frame."
+    },
+    {
+      "id": "vidu-v2.0-i2v",
+      "displayName": "Vidu V2.0 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "vidu-v2.0-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 120,
+      "description": "Vidu V2.0 image-to-video. Strong character consistency from a first-frame image."
+    },
+    {
+      "id": "pixverse-v6-i2v",
+      "displayName": "Pixverse V6 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "pixverse-v6-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 120,
+      "description": "Pixverse V6 image-to-video. Stylized outputs from a single reference frame."
+    },
+    {
+      "id": "runway-i2v",
+      "displayName": "Runway I2V",
+      "provider": "llmapi",
+      "apiVersionId": "runway-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Runway image-to-video. Industry-standard cinematic animation from a first frame."
+    },
+    {
+      "id": "ltx-2-pro-i2v",
+      "displayName": "LTX-2 Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "ltx-2-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "LTX-2 Pro image-to-video. High-quality pro-tier rendering from a first frame."
+    },
+    {
+      "id": "ltx-2-fast-i2v",
+      "displayName": "LTX-2 Fast I2V",
+      "provider": "llmapi",
+      "apiVersionId": "ltx-2-fast-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "LTX-2 Fast image-to-video. Quick iteration baseline from a first frame."
+    },
+    {
+      "id": "minimax-hailuo-2.3-standard-i2v",
+      "displayName": "Hailuo 2.3 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "minimax-hailuo-2.3-standard-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 6,
+      "creditsPerSec": 120,
+      "description": "Hailuo 2.3 image-to-video. Cinematic realism with natural human motion from a first frame."
+    },
+    {
+      "id": "minimax-hailuo-2.3-pro-i2v",
+      "displayName": "Hailuo 2.3 Pro I2V",
+      "provider": "llmapi",
+      "apiVersionId": "minimax-hailuo-2.3-pro-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Hailuo 2.3 Pro image-to-video. Premium cinematic animation from a first frame."
+    },
+    {
+      "id": "minimax-hailuo-2.3-fast-i2v",
+      "displayName": "Hailuo 2.3 Fast I2V",
+      "provider": "llmapi",
+      "apiVersionId": "minimax-hailuo-2.3-fast-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 6,
+      "creditsPerSec": 120,
+      "description": "Hailuo 2.3 Fast image-to-video. Quick-turnaround cinematic animation from a first frame."
+    },
+    {
+      "id": "midjourney-v7-i2v",
+      "displayName": "Midjourney V7 I2V",
+      "provider": "llmapi",
+      "apiVersionId": "midjourney-v7-i2v",
+      "capability": "i2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Midjourney V7 image-to-video. Painterly, artistic motion from a single reference frame."
+    },
+    {
+      "id": "kling-o1-reference-to-video",
+      "displayName": "Kling O1 Reference-to-Video",
+      "provider": "llmapi",
+      "apiVersionId": "kling-o1-reference-to-video",
+      "capability": "r2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 200,
+      "description": "Kling O1 reference-conditioned video synthesis. Multi-image character/scene composition."
+    },
+    {
+      "id": "veo3.1-reference-to-video",
+      "displayName": "Veo 3.1 Reference-to-Video",
+      "provider": "llmapi",
+      "apiVersionId": "veo3.1-reference-to-video",
+      "capability": "r2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Veo 3.1 reference-conditioned video. Subject-preserving generation from reference images."
+    },
+    {
+      "id": "wan2.7-reference-to-video",
+      "displayName": "Wan 2.7 Reference-to-Video",
+      "provider": "llmapi",
+      "apiVersionId": "wan2.7-reference-to-video",
+      "capability": "r2v",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "Wan 2.7 reference-conditioned video via LLMAPI. Multi-subject composition with voice cloning."
+    },
+    {
+      "id": "vidu-q2-pro-start-end-video",
+      "displayName": "Vidu Q2 Pro Start-End (BGM)",
+      "provider": "llmapi",
+      "apiVersionId": "vidu-q2-pro-start-end-video",
+      "capability": "r2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Vidu Q2 Pro start-end-to-video interpolation with BGM. Requires two images in image_list: a start frame and an end frame."
+    },
+    {
+      "id": "pixverse-v6-transition",
+      "displayName": "Pixverse V6 Transition",
+      "provider": "llmapi",
+      "apiVersionId": "pixverse-v6-transition",
+      "capability": "r2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 200,
+      "description": "Pixverse V6 transition effect. Morphs between two reference images supplied via image_list."
+    },
+    {
+      "id": "video-effects",
+      "displayName": "Video Effects",
+      "provider": "llmapi",
+      "apiVersionId": "video-effects",
+      "capability": "editor",
+      "maxDurationSec": 10,
+      "creditsPerSec": 120,
+      "description": "LLMAPI video-effects endpoint. Defer to gateway effects pipeline when surface area is not exposed directly."
+    },
+    {
+      "id": "veo-3-1-lite",
+      "displayName": "Veo 3.1 Lite (Google)",
+      "provider": "google-direct",
+      "apiVersionId": "veo-3.1-lite-generate-preview",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 60,
+      "description": "Google Veo 3.1, lite tier. Cheapest Veo; good for simple motion and quick iterations."
+    },
+    {
+      "id": "veo-3-1-fast",
+      "displayName": "Veo 3.1 Fast (Google)",
+      "provider": "google-direct",
+      "apiVersionId": "veo-3.1-fast-generate-preview",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 90,
+      "description": "Google Veo 3.1, fast tier. Verified end to end; an 8s clip completed in about 30 seconds."
+    },
+    {
+      "id": "veo-3-1",
+      "displayName": "Veo 3.1 (Google)",
+      "provider": "google-direct",
+      "apiVersionId": "veo-3.1-generate-preview",
+      "capability": "t2v",
+      "maxDurationSec": 8,
+      "creditsPerSec": 140,
+      "description": "Google Veo 3.1 flagship. Highest fidelity and motion coherence."
+    }
+  ]
+}

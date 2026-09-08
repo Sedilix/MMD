@@ -1,0 +1,19 @@
+# Permissions for cybrdeck-desktop custom commands
+
+[[permission]]
+identifier = "allow-open-external"
+description = "Enables the open_external custom command"
+commands.allow = ["open_external"]
+
+[[permission]]
+identifier = "allow-desktop-info"
+description = "Enables get_desktop_version and get_os_platform custom commands"
+commands.allow = ["get_desktop_version", "get_os_platform", "ping_ollama"]
+
+[[set]]
+identifier = "default"
+description = "Default permissions for cybrdeck-desktop application"
+permissions = [
+    "allow-open-external",
+    "allow-desktop-info"
+]

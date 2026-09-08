@@ -1,0 +1,127 @@
+{
+  "tts": [
+    {
+      "id": "eleven_v3",
+      "displayName": "ElevenLabs V3 (Multilingual)",
+      "provider": "elevenlabs",
+      "apiVersionId": "eleven_v3",
+      "creditsPer1000": 18,
+      "badge": "Most Languages (74)",
+      "description": "State-of-the-art expressive voice generation with rich emotional nuance, multi-dialect accents, and 74 languages."
+    },
+    {
+      "id": "eleven_flash_v2_5",
+      "displayName": "ElevenLabs Flash 2.5",
+      "provider": "elevenlabs",
+      "apiVersionId": "eleven_flash_v2_5",
+      "creditsPer1000": 9,
+      "badge": "Fine Voice Control",
+      "description": "Ultra-low-latency voice synthesis with fine prosody control."
+    },
+    {
+      "id": "eleven_turbo_v2_5",
+      "displayName": "ElevenLabs Turbo 2.5",
+      "provider": "elevenlabs",
+      "apiVersionId": "eleven_turbo_v2_5",
+      "creditsPer1000": 12,
+      "badge": "High Speed",
+      "description": "High-speed voice completions for conversational agents and audio tools."
+    },
+    {
+      "id": "sonic-3",
+      "displayName": "Sonic 3.0 (Cartesia)",
+      "provider": "cartesia",
+      "apiVersionId": "sonic-3",
+      "creditsPer1000": 10,
+      "badge": "General Purpose / Streaming",
+      "description": "Cartesia high-fidelity speech synthesis engine with natural intonation and WebSocket streaming support."
+    },
+    {
+      "id": "sonic-turbo",
+      "displayName": "Sonic Turbo (Cartesia)",
+      "provider": "cartesia",
+      "apiVersionId": "sonic-turbo",
+      "creditsPer1000": 7,
+      "badge": "Cheapest & Lowest Latency",
+      "description": "Low-latency sub-100ms voice generation engine at the lowest credit cost."
+    },
+    {
+      "id": "speechmatics",
+      "displayName": "Speechmatics TTS (Preview)",
+      "provider": "speechmatics",
+      "apiVersionId": "speechmatics",
+      "creditsPer1000": 10,
+      "badge": "High Quality Audio",
+      "description": "Speechmatics preview text-to-speech engine with natural pronunciation."
+    },
+    {
+      "id": "qwen3-tts-flash",
+      "displayName": "Qwen3 TTS Flash (Alibaba)",
+      "provider": "alibaba",
+      "apiVersionId": "qwen3-tts-flash",
+      "creditsPer1000": 8,
+      "badge": "AMS Native Voice",
+      "description": "Alibaba Model Studio Qwen3-TTS-Flash speech synthesis on the native DashScope endpoint."
+    }
+  ],
+  "stt": [
+    {
+      "id": "speechmatics-rt",
+      "displayName": "Speechmatics Real-Time STT",
+      "provider": "speechmatics",
+      "apiVersionId": "speechmatics-rt",
+      "creditsPerMin": 4,
+      "badge": "Real-Time Microphone STT",
+      "description": "High-accuracy streaming speech recognition via Speechmatics WebSockets."
+    },
+    {
+      "id": "ink-whisper",
+      "displayName": "Ink Whisper (Cartesia STT)",
+      "provider": "cartesia",
+      "apiVersionId": "ink-whisper",
+      "creditsPerMin": 3,
+      "badge": "Cheapest & Fastest",
+      "description": "Ultra-fast low-latency transcription engine with lowest per-minute cost."
+    },
+    {
+      "id": "universal-3-pro",
+      "displayName": "AssemblyAI Universal-3 Pro",
+      "provider": "assemblyai",
+      "apiVersionId": "universal-3-pro",
+      "creditsPerMin": 5,
+      "badge": "Highest Accuracy & Longest (4h)",
+      "description": "Frontier accuracy transcription for dense multi-speaker audio, meetings, and long audio files up to 4 hours."
+    },
+    {
+      "id": "whisper-1",
+      "displayName": "OpenAI Whisper 1",
+      "provider": "openai",
+      "apiVersionId": "whisper-1",
+      "creditsPerMin": 10,
+      "badge": "Golden Standard",
+      "description": "OpenAI golden standard speech recognition and translation model."
+    }
+  ],
+  "music": [
+    {
+      "id": "fun-music-v1",
+      "displayName": "Fun Music v1 (Alibaba)",
+      "provider": "alibaba",
+      "apiVersionId": "fun-music-v1",
+      "credits": 20,
+      "maxDurationSec": 300,
+      "badge": "Vocal + Instrumental",
+      "description": "Alibaba Fun-Music engine — full vocal/instrumental tracks with lyrics support and gender-selectable vocals."
+    },
+    {
+      "id": "fun-music-preview",
+      "displayName": "Fun Music Preview (Alibaba)",
+      "provider": "alibaba",
+      "apiVersionId": "fun-music-preview",
+      "credits": 15,
+      "maxDurationSec": 120,
+      "badge": "Preview Tier",
+      "description": "Lower-cost Fun-Music preview tier for short-form compositions and rapid iteration."
+    }
+  ]
+}

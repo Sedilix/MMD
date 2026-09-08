@@ -1,0 +1,206 @@
+[
+  {
+    "id": "qwen-image",
+    "displayName": "Qwen Image",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image",
+    "description": "Standard quality Qwen image generation via Alibaba Model Studio. Cheap and fast.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 30,
+    "creditNote": "Budget Qwen image tier"
+  },
+  {
+    "id": "qwen-image-plus",
+    "displayName": "Qwen Image Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-plus",
+    "description": "High-fidelity photorealistic Qwen image generation. Good balance of quality and cost.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 45,
+    "creditNote": "Standard Qwen Image Plus tier"
+  },
+  {
+    "id": "qwen-image-max",
+    "displayName": "Qwen Image Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-max",
+    "description": "Premier flagship Qwen image model. Exceptional photo-realism and detail.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 70,
+    "creditNote": "Flagship Qwen image model"
+  },
+  {
+    "id": "qwen-image-2.0",
+    "displayName": "Qwen Image 2.0",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-2.0",
+    "description": "Qwen Image 2.0. Accelerated generation balancing quality and response speed.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 50,
+    "creditNote": "Qwen 2.0 standard tier"
+  },
+  {
+    "id": "qwen-image-2.0-pro",
+    "displayName": "Qwen Image 2.0 Pro",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-2.0-pro",
+    "description": "High-resolution Qwen 2.0 Pro. Design assets, realistic texture, professional illustrations.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 60,
+    "creditNote": "Qwen 2.0 Pro high-res tier"
+  },
+  {
+    "id": "qwen-image-edit",
+    "displayName": "Qwen Image Edit",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-edit",
+    "description": "Single-image editing and multi-image fusion model.",
+    "capabilities": [
+      "imageEdit",
+      "multiRef"
+    ],
+    "credits": 45,
+    "creditNote": "Budget Qwen editing tier"
+  },
+  {
+    "id": "qwen-image-edit-plus",
+    "displayName": "Qwen Image Edit Plus",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-edit-plus",
+    "description": "Plus series for image editing supporting multiple image outputs and custom resolutions.",
+    "capabilities": [
+      "imageEdit",
+      "multiRef",
+      "negativePrompt"
+    ],
+    "credits": 55,
+    "creditNote": "Standard Qwen editing tier"
+  },
+  {
+    "id": "qwen-image-edit-max",
+    "displayName": "Qwen Image Edit Max",
+    "provider": "alibaba",
+    "apiVersionId": "qwen-image-edit-max",
+    "description": "Flagship Qwen image editing tier with highest quality and negative prompt support.",
+    "capabilities": [
+      "imageEdit",
+      "multiRef",
+      "negativePrompt"
+    ],
+    "credits": 75,
+    "creditNote": "Premium Qwen editing tier"
+  },
+  {
+    "id": "wan2.6-t2i",
+    "displayName": "Wan 2.6 Text-to-Image",
+    "provider": "alibaba",
+    "apiVersionId": "wan2.6-t2i",
+    "description": "Wan 2.6 text-to-image generation. Supports 1K / 2K / 4K output.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 60,
+    "creditNote": "Wan 2.6 standard tier"
+  },
+  {
+    "id": "wan2.7-image",
+    "displayName": "Wan 2.7 Image",
+    "provider": "alibaba",
+    "apiVersionId": "wan2.7-image",
+    "description": "Wan 2.7 image generation. Default 2K output with high photorealism.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 65,
+    "creditNote": "Wan 2.7 standard tier"
+  },
+  {
+    "id": "wan2.7-image-pro",
+    "displayName": "Wan 2.7 Image Pro",
+    "provider": "alibaba",
+    "apiVersionId": "wan2.7-image-pro",
+    "description": "Wan 2.7 Image Pro flagship tier. Up to 4K output, support for reference images and sequential editing.",
+    "capabilities": [
+      "t2i",
+      "imageEdit",
+      "multiRef",
+      "negativePrompt"
+    ],
+    "credits": 85,
+    "creditNote": "Wan 2.7 Pro flagship tier"
+  },
+  {
+    "id": "z-image-turbo",
+    "displayName": "Z-Image Turbo",
+    "provider": "alibaba",
+    "apiVersionId": "z-image-turbo",
+    "description": "Z-Image Turbo — fast, low-cost text-to-image. 10x faster than Wan 2.7, ~1/5 the price. Photorealistic portraits and product photos. No editing support, single image output per call.",
+    "capabilities": [
+      "t2i"
+    ],
+    "credits": 15,
+    "creditNote": "Z-Image Turbo fast budget tier"
+  },
+  {
+    "id": "gemini-flash-image",
+    "displayName": "Gemini 2.5 Flash Image",
+    "provider": "google-direct",
+    "apiVersionId": "gemini-2.5-flash-image",
+    "description": "Google's conversational image model. Generates and edits from natural-language instructions; strongest of the Gemini tiers at following a written edit.",
+    "capabilities": [
+      "t2i",
+      "imageEdit"
+    ],
+    "credits": 40,
+    "creditNote": "Gemini direct — billed on the GEMINI_API_KEY account"
+  },
+  {
+    "id": "gemini-3-1-flash-image",
+    "displayName": "Gemini 3.1 Flash Image",
+    "provider": "google-direct",
+    "apiVersionId": "gemini-3.1-flash-image",
+    "description": "Newer Gemini flash image tier. Faster and cheaper than Pro, better prompt adherence than 2.5.",
+    "capabilities": [
+      "t2i",
+      "imageEdit"
+    ],
+    "credits": 45,
+    "creditNote": "Gemini direct"
+  },
+  {
+    "id": "gemini-3-pro-image",
+    "displayName": "Gemini 3 Pro Image",
+    "provider": "google-direct",
+    "apiVersionId": "gemini-3-pro-image",
+    "description": "Highest-quality Gemini image tier. Use for fine detail, in-image text, or several changes that must stay mutually consistent.",
+    "capabilities": [
+      "t2i",
+      "imageEdit"
+    ],
+    "credits": 90,
+    "creditNote": "Gemini direct — premium tier"
+  },
+  {
+    "id": "gemini-flash-lite-image",
+    "displayName": "Gemini 3.1 Flash Lite Image",
+    "provider": "google-direct",
+    "apiVersionId": "gemini-3.1-flash-lite-image",
+    "description": "Cheapest Gemini image tier. Good for straightforward scenes and quick iterations; reach for a higher tier when detail or in-image text matters.",
+    "capabilities": [
+      "t2i",
+      "imageEdit"
+    ],
+    "credits": 25,
+    "creditNote": "Gemini direct — budget tier"
+  }
+]

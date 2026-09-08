@@ -1,0 +1,63 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Playground",
+  "version": "0.2.0",
+  "identifier": "com.cybrdeck.playground",
+  "build": {
+    "frontendDist": "../out-desktop",
+    "devUrl": "http://localhost:9002/playground",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run desktop:prepare"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Playground",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 1024,
+        "minHeight": 680,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": false,
+        "dragDropEnabled": true,
+        "visible": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.googleusercontent.com https://*.firebasestorage.app https://firebasestorage.googleapis.com; media-src 'self' blob:; connect-src ipc: http://ipc.localhost https://www.cybrdeck.com https://cybrdeck.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://*.googleapis.com https://*.firebaseapp.com https://api.deepseek.com https://api.openai.com https://api.groq.com https://dashscope-intl.aliyuncs.com https://api.anthropic.com https://openrouter.ai https://api.mistral.ai https://api.x.ai https://cdn.jsdelivr.net wss://eu.rt.speechmatics.com http://localhost:* http://127.0.0.1:*"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico"
+      },
+      "wix": {
+        "language": "en-US"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://www.cybrdeck.com/api/desktop/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDFCN0Q5QzMxOEVDODQ2MzkKUldRNVJzaU9NWng5Rzl0b0VWOUdPWUdDYzRhMkJ3MitIT29idHhsalM5K3dVK0tPQ3BWTThHWGoK"
+    }
+  }
+}
